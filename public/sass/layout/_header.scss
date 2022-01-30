@@ -1,0 +1,371 @@
+ 
+//colores
+$rosado:deeppink; 
+//$violeta:purple;
+$rojo-apagado:hsl(0, 100%, 70%);  
+$gris-frio:#515E63;
+$amarillo-vainilla:hsl(34, 99%, 70%);
+$gris-oscuro:hsl(0, 0%, 24%);
+
+$natura-colores: (
+  'color-header':#515E63, 
+  'color-headerbg': #515E63,
+  'searchbar-primary': #C9D8B6,
+  'color-buscar': #F1ECC3,
+);
+ 
+$naranja-gris: (
+  'color-header':hsl(16, 100%, 50%),
+  'color-headerbg':hsl(16, 100%, 30%),
+  'searchbar-primary':hsl(197, 10%, 65%),
+  'color-buscar':hsl(197, 10%, 55%),
+);
+ 
+$mapa-gris: (
+  'color-header':white,
+  'color-headerbg':$gris-nublado,
+  'searchbar-primary':hsl(197, 10%, 65%),
+  'color-buscar':hsl(197, 10%, 55%),
+);
+
+
+//me gusta la idea de poder cambiar de paletas ya declaradas en mapas (key:elemento, value:color) 
+@function get-color($key) { //toma "color-header", busca su color en el mapa guardada en var $paleta-seleccion,y devuelve key color
+  @return map-get($paleta-seleccion, $key);
+ 
+} 
+
+//// con cambiar paleta seleccion basta
+$paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas facil cambiar entre paletas
+ 
+ 
+.main-header {/*flex permite reacomodar flow al bajar resolucion mediante media */
+  display: flex;
+  flex-direction: column;
+}
+
+#menu {
+  display: none;
+}
+
+#menu:checked + .nav-bar {
+  display: block;
+} 
+
+#menu:checked ~ .search-bar .menu-toggle__label {
+  background-color: yellow;
+}
+
+.main-header{ /* sticky header*/
+   position:sticky;
+   top:0;
+   z-index:3; 
+}
+
+
+/*********************************
+              NAV BAR
+  *********************************/
+.nav-bar {
+
+   // background-color: $color-headerbg;
+    background-color: get-color("color-headerbg"); 
+     
+  &__nav-list { /*con flex requiere menos codigo*/
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+     
+  }
+
+   
+
+  &__nav-link { /*inline no muestra padding top padding bottom*/
+    display: block;
+    padding: 1em 2em;
+    text-decoration: none;
+    color:get-color("color-header");
+  }
+
+  &__nav-link:hover, &__nav-link:focus{   //que marque cual elijo  
+    background-color: #AAA492;
+  }
+}
+
+/*********************************
+              SEARCH BAR
+  *********************************/
+.search-bar {
+  //$color-casero: white; /*mas facil de cambiar, scope local, preguntar*/
+  background-color: get-color('searchbar-primary');
+   
+  display: flex;
+  justify-content: space-between;
+   
+  &__icon-search{
+    font-size:20px;
+  }
+
+
+  &__logo-container,
+  &__form-container {
+    padding: 0.65em;
+  }
+
+  &__logo-img{
+    width: 60px;
+  }
+  &__logo-container {
+  //  background-color: $searchbar-primary;
+    padding:em(5); 
+  }
+
+  &__form-container {
+  //  background-color: $searchbar-primary;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form-label {
+    background-color: get-color("color-buscar");
+    padding-right: 0.4rem; // no quede msj pegado a busq
+    
+  }
+
+  &__form-search {
+    background-color:white;
+    width: 90%;
+     
+    /*
+    &:hover, &:focus{  
+        background-color:hsl(328, 100%, 30%);
+    }*/
+  }
+
+  &__form-submit {
+   // background-color: darkslategray;
+  // background-color: #65BCEF;
+  background-color:$amarillo-vainilla;
+    margin-left:-40px; // opuesto a margin 40px(mueve a izq en vez de der), para quedar en el padding de barra busqueda
+    width:42px;
+    border-radius:3px;
+    z-index: 12; // lupa on top
+    border-style:solid;
+   //  border-left-color: transparent;
+    border-top-color:black;
+   &:hover{ //rever nesting
+    background-color:#F3A847;
+     
+   }
+
+  }
+
+  &__carrito-container {
+    display:flex;
+      flex: 0 0 5em;
+  //    background-color: $searchbar-primary;
+      align-items:center; // eje y centrado
+  }
+
+  &__carrito-img{
+       margin-left:1rem;
+       max-width:100%; 
+       font-size:2.2rem;
+       color:white;
+  }
+
+  &__search-bar__carrito-link{
+      display:flex;
+  }
+}
+
+.search-bar__form-search{ /* prefiero que no este nesteado en .search-bar*/
+   
+   padding:5px 0 5px 10px; // 
+  // margin-left:  40px;
+    
+   border-radius:5px;
+    
+   //border-left-color:transparent;
+
+    &:focus{
+       filter:brightness(60%); /*si se cambia el color de barra busqueda, brigthness lo cambia*/
+    }
+
+    &:hover{ /*rever*/
+         
+        border-style:solid;
+        border-color: #316282;
+    }
+    &::placeholder{
+       // font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color:hsl(0, 0%, 20%);
+    }
+}
+
+/*********************************
+              MENU TOGGLE
+  *********************************/
+.menu-toggle {
+  display: none;
+  background-color: red;
+  flex: 0 0 3em;
+  position: relative;
+  cursor: pointer;
+
+  &__label {
+    display: block;
+    background-color: black;
+    &:hover{
+      background-color: #8a8061;
+    }
+    width: 100%;
+    height: 100%;
+  }
+
+  &__pan-arriba,
+  &__medallon,
+  &__pan-abajo {
+    display: block;
+    background-color: #333;
+    height: 0.2em;
+    position: absolute;
+    left: 0.5em;
+    right: 0.5em;
+    margin: 0 auto;
+  }
+
+  &__pan-arriba &__pan-abajo{
+    top: 0.8em;
+  }
+
+  &__pan-arriba{
+    top:12px;
+  }
+  &__medallon {
+    top: 50%;
+    margin-top: -0.15em;
+  }
+
+  &__pan-abajo {
+    bottom: 0.8em;
+  }
+}
+@media (max-width: 768px) { /* hasta max 768px hace esto, celulares, tablets*/
+  .main-header {
+    flex-direction: column-reverse;
+  }
+
+  .search-bar{
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    
+    &__logo-container{
+      margin-right: auto;
+    }
+    
+    &__form-submit{
+      margin-left:-6px; //3px 
+    }
+
+    &__form-container{
+      order:3;
+    }
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: none;
+
+    &__nav-list {
+      flex-direction: column;
+    } 
+  }
+
+  .search-bar__carrito-container:hover + .tiptext { /*rever, seria mejor delegarlo a js*/
+    display:block;
+    left:80%;
+    top:50px;
+   }
+}
+
+
+.section-cards__header{ /*rever ubicacion sass*/
+    padding-bottom: 10px; /*no se superponga la carta*/
+}
+
+/*********************************
+        tooltips
+  *********************************/
+ 
+/*
+.tipflow{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+}
+ 
+.tipflow__carrito{
+    border-style:solid; // candidato mixin
+    border-top:solid #333;
+    border-left-color:#333;
+    border-bottom:none white;
+    border-right:none white;
+    background-color: white;
+    border-width: 1.5px;
+    padding:2.5px 5px 2.5px;
+    margin-top:4px;
+    margin-right:4px;
+    display:none;
+}
+
+.search-bar__carrito-container:hover + .tiptext { 
+    display:block;
+}
+*/
+
+.tiptext{
+    position:absolute; // podria hacerse con flex y quedaria mejor
+    top:100px;
+    left:92.5%;
+    display:none; // o color:transparent, color:black
+     
+    border-style:solid; // candidato herencia
+    border-top:solid #333;
+    border-left-color:#333;
+    border-bottom:none white;
+    border-right:none white;
+    background-color: white;
+    border-width: 1.5px;
+    padding:2.5px 5px 2.5px;
+
+}
+
+
+
+//selecciona elem con clase .tiptext solo si .tiptext le sigue inmediatamente  a carrito-container, en hover.
+//si fuera sin +, no habria matching
+.search-bar__carrito-container:hover + .tiptext { /*rever, seria mejor delegarlo a js*/
+    display:block;
+}
+
+@media (prefers-color-scheme: dark){ 
+    .search-bar__form-submit i{
+      color:white;  
+    }
+
+    .menu-toggle__label{
+      background-color: grey;
+    }
+
+    .search-bar__carrito-img{
+      color: hsl(0, 0%, 76%);
+    }
+
+    
+}
+   

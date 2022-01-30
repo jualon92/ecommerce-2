@@ -1,0 +1,123 @@
+@mixin forma-ui { //quiero que los botones e inputs compartan esto, y  evitar codigo repetido o utilizar important
+    border-radius: 4px; //candidato var o func
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        padding: 13px;
+        margin-top: 5px;
+        margin-bottom: 14px;  
+  }
+   
+
+.form-alta{
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    padding-left:5px; 
+    
+    height:40%;
+
+    &__boton-ui{
+        display:flex;
+        flex-direction: row;
+      //  justify-content:flex-end; 
+        
+         
+    }
+    &__detalles{
+        width:163px;
+    }
+    &__p{
+     //   margin-left:5px !important; //feo
+     @include forma-ui; // blueprint
+      margin:0;
+      margin-left:5px;
+     
+    }
+
+    & label{
+        position:absolute;
+         
+    }
+
+    &__drop-area{
+        border: 2px dashed #ccc;
+        border-radius: 20px;
+        width: 400px;
+        padding: 20px;
+        margin-top:18px;
+        margin-bottom:18px;
+        &__ele{
+            margin-top:7px
+        }
+        &.highlight{
+            border-color: purple;
+        }
+        & input{
+            display:none;
+        }
+    }
+
+    &__gallery img{
+        width:100px;
+        margin-bottom:10px;
+        margin-right: 10px;
+        vertical-align:middle;
+    }
+    &__input-detalles{
+        width:163px;
+    }
+
+   // &__input-detalles, & input{
+    &__input-datos{
+        @include forma-ui;
+        margin-left:33%; 
+        overflow: hidden;
+           
+    }
+
+    &__input-foto{
+        max-width: 70%;
+    }
+
+     
+
+}
+    
+@media (max-width:769px){
+
+    /* no hacer, cascada, influye todos los forms
+    form input{
+        margin-left:80px; 
+    }*/ 
+ 
+    #pfotos{
+        overflow: hidden;
+    } 
+    
+    .alta__boton-ui{
+ 
+        justify-content:flex-start;
+    }
+  }
+
+ 
+
+.dialog{
+    display:block;
+    margin-bottom:15px;
+    margin-top:15px;
+}
+
+.button{ 
+    padding:15px;
+    background-color: #ccc;
+    cursor:pointer;
+    border-radius:5px;
+    border:1px solid #ccc;
+    position: relative !important;
+    display:inline-block;
+}
+
+#droparea.highlight{
+    border-color: green!important;
+}

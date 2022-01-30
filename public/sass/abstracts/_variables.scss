@@ -1,0 +1,10 @@
+$naranja-vitamina:#FD611A;
+$gris-nublado:#565656;
+$emconst: 16; // Default
+
+@function em($pixels) { // toma parametros pixeles y devuelve em, mas que nada para hacerlo mas responsive con rem
+    @return #{$pixels/$emconst}rem;
+}
+
+$gris-claro:#f1f2f3;
+$gris-oscuro:#323232;

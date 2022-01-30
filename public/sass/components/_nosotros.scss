@@ -1,0 +1,184 @@
+ 
+.body-about{
+    font-family: sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+
+    & p{
+        font-size: inherit;
+        line-height: 1.75;
+        text-rendering: optimizeLegibility;
+        margin-block-start: 1em; //rever
+        margin-block-end: 1em;
+         
+        -webkit-font-smoothing: antialiased;
+    }
+} 
+
+ 
+
+/*
+.about-contenedor{ //https://every-layout.dev/layouts/cover/
+     
+    min-height: 100vh; 
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+ */
+
+.about-nosotros{
+    display:flex;
+    flex-direction:row;
+    gap:42px; //podria tambien usarse margin 24px en c elemento
+    margin-top:em(96);
+    margin-bottom:em(96);
+     
+        
+}
+ 
+ 
+.presentacion{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #F1F1F2;
+
+    &__contenido-flex{
+        display:flex;
+        flex-basis:50%;
+        margin-top:em(96);
+        margin-bottom:em(96);
+    }
+
+    &__marca{
+        font-weight:bold;
+    }
+
+
+}
+
+ 
+ 
+ 
+.txt-mid{  
+    
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/img/productos/pclogo.jpg");
+    color:black;
+	background-size: cover; 
+    align-self: normal;
+    height: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+     
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 50%;
+        color:white;
+         
+
+    }
+
+    &__par2{
+        color:white;
+        text-align-last: center;
+    }
+
+    &__tittle{
+        line-height: 1;
+        margin-bottom: 1rem;
+        font-size:3rem;
+    }
+}
+
+ 
+ 
+.header-nos{ 
+    @extend .main-header;  
+    position:relative;
+}
+
+ 
+
+ 
+@media (max-width:769px){
+    .contacto__form{
+       
+      margin-right: 80px; // 60 + 20padding: 80px
+    }
+ 
+         
+     
+    .txt-mid__container, .presentacion__contenido-flex  {
+        flex-basis:90%;
+    }
+    .about-nosotros{
+        flex-wrap: wrap;
+         
+
+        &__texto{
+            flex-basis: 90%;
+        }
+
+        &__texto-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        &____imagen{
+            width: 75%;
+            min-width: 100%;
+        }
+    }
+}
+
+     
+
+    
+
+     
+     /*
+    .presentacion__contenido-flex{
+        min-width: 200px;
+    }*/
+  
+
+ 
+
+
+/*
+.about_historia{
+    overflow: hidden; 
+    border-right: .05em solid orange; 
+    white-space: nowrap;  
+    margin: 0 auto;  
+    letter-spacing: .25em; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+ 
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+ 
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+  */
+
+ 

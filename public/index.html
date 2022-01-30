@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eCommerce</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="sass/vendors/fontello-dabf156c/css/fontello.css">
+
+</head>
+
+<body>
+
+    <header class="main-header">
+        <input type="checkbox" id="menu" />
+
+        <nav class="nav-bar">
+            <!-- acomodar con unordered list mas simple para nav links que inline  -->
+
+            <ul class="nav-bar__nav-list">
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="" id="inicio">Inicio</a>
+                    <!--href borrado para spa, agrego id-->
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="" id="alta">Alta</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="" id="contacto">Contacto</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="" id="nosotros">Nosotros</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <div class="search-bar__logo-container">
+                <img class="search-bar__logo-img" src="img/productos/logo-foco2.png"
+                    alt="logo de un foco de filamento prendido">
+            </div>
+            <form class="search-bar__form-container">
+                <label class="search-bar__form-label" for="busqueda">Buscar</label>
+                <input class="search-bar__form-search" id="busqueda" type="search"
+                    placeholder="Buscar productos, marcas y más..." />
+                <!--   <input class="search-bar__form-submit" type="submit" value="Buscar" /> //button me permite darle imagen sin css weird trickery-->
+                <button class="search-bar__form-submit" type="submit" value="Buscar">
+                    <i class="search-bar__icon-search icon-search"></i>
+                </button>
+            </form>
+
+            <a class="search-bar__carrito-container">
+                <i class="icon-basket search-bar__carrito-img"></i>
+                <!-- <img class="search-bar__carrito-img" src="img/productos/carrito.jpg" alt="imagen de carrito" /> -->
+            </a>
+            <span class="tiptext">Carrito</span>
+
+
+            <div class="menu-toggle">
+                <label class="menu-toggle__label" for="menu">
+                    <span class="menu-toggle__pan-arriba"></span>
+                    <span class="menu-toggle__medallon"></span>
+                    <span class="menu-toggle__pan-abajo"></span>
+                </label>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- --------- VISTA DEL CARRITO ----------- -->
+    <div class="section-carrito"></div>
+    <!-- --------------------------------------- -->
+
+
+    <main>
+
+
+
+
+    </main>
+
+
+    <footer>
+        <div class="footer-top">
+            <!-- delego en footer top dibujar el background entre body y footer main-->
+
+        </div>
+        <div class="footer-main">
+            <div class="footer-box">
+                <div class="footer-box__ayuda footer-box__info ">
+                    <h2 class="footer-box__titulo">Ayuda</h2>
+                    <ul class="footer-box__lista">
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="footer-box__info">
+                    <!--footer-box__info podria ser reempalzo por childs-->
+                    <h2 class="footer-box__titulo">Info al cliente</h2>
+                    <ul class="footer-box__lista">
+                        <li>
+                            <a class="footer-box__link-contacto" href="contacto.html">
+                                contactanos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-box__info footer-box__contacto">
+                    <h2 class="footer-box__titulo">Contacto</h2>
+                    <ul class="footer-box__lista">
+                        <li>Av. Middleof Nowhere 2985, Campana, Argentina</li>
+                        <li class="footer-box__horario">LUN A VIER DE 10 A 13 / 14 A 17 HS</li>
+                        <li>Tel:
+                            <span class="footer-box__caract">(011) </span>
+                            <span class="footer-box__tel"> 6040.2020</span>
+                            Rotativas
+
+                        </li>
+                        <li>
+                            WhatsApp:
+                            <span class="footer-box__caract"> (011) </span>
+                            <span class="footer-box__tel"> 11.2578.9981 </span>
+                        </li>
+                        <li>
+                            <div class="footer-box__social">
+                                <a href="https://www.youtube.com/" target="_blank">
+                                    <i class="icon-youtube-play"></i>
+                                </a>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class="icon-facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" target="_blank">
+                                    <i class="icon-instagram"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-box__info footer-box__ofertas">
+                    <h2 class="footer-box__titulo">OFERTAS Y NOVEDADES</h2>
+                    <form action="get">
+                        <ul class="footer-box__lista">
+
+                            <li>
+                                <input class="footer-box__usuario footer-box__login" type="text" placeholder="Nombre">
+
+                            </li>
+                            <li>
+                                <input type="text" class="footer-box__password footer-box__login" placeholder="Email">
+                            </li>
+                            <li>
+                                <input class="footer-box__btn-enviar" type="submit" value="Enviar!">
+                            </li>
+
+                        </ul>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom__msg"> © Lorem ipsum - dolor sit amet consectetur.</div>
+        </div>
+    </footer>
+
+    
+    <!-- Código de librerías -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+
+    <!-- clientes http -->
+    <script src="js/clientes/http.client.js"></script>
+
+    <!-- servicios -->
+    <script src="js/servicios/producto.js"></script>
+    <script src="js/servicios/carrito.js"></script>
+
+    <!-- modelos -->
+    <script src="js/modelos/producto.js"></script>
+    <script src="js/modelos/carrito.js"></script>
+
+    <!-- controladores -->
+    <script src="js/controladores/productos.js"></script>
+    <script src="js/controladores/carrito.js"></script>
+
+    <!-- menúes -->
+    <script src="js/menu/alta.js"></script>
+    <script src="js/menu/nosotros.js"></script>
+    <script src="js/menu/contacto.js"></script>
+    <script src="js/menu/inicio.js"></script>
+    <script src="js/menu/carrito.js"></script>
+
+    <!-- Código de arranque -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

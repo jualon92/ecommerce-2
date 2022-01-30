@@ -1,0 +1,44 @@
+{{#if listado.length }}
+{{#each listado}}
+
+<div class="card-placeholder">
+    <a class="card" class="card">
+        <article class="card__article">
+            <div class="card__image" style="
+                              background-image: url({{foto}});
+                            ">
+            </div>
+
+            <div class="card__content">
+                <h3 class="card__heading">{{nombre}}</h3>
+                <div class="card__description">
+                    <p>
+                        {{detalles}}
+                    </p>
+                </div>
+            </div>
+        </article>
+    </a>
+    <form class="form-comprar" id="carrito">
+        <button class="card__btn-comprar" onclick="agregarCarrito(event,'{{id}}',this)">sumar al carrito</button>
+    </form>
+
+    <form class="contenedor-btn-suma" id="btn-">
+        <button class="btn-cant btn-sustraer">-</button>
+        <div class="internal-clock"></div>
+        <button class="btn-cant btn-sumar"> + </button>
+    </form>
+
+
+    <form class="form-favorito">
+        <button class="btn-fav" type="button">
+            <i class="btn-fav__icon icon-heart"></i>
+        </button>
+    </form>
+</div>
+{{/each}}
+{{else}}
+<h2>No se encontraron productos</h2>
+{{/if}}
+
+ 

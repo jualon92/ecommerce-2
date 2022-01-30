@@ -1,0 +1,266 @@
+$breakpoint-small:769px;
+$breakpoint-laptop:770px;
+$breakpoint-high:2400px;
+$color-naranjish:#FD8A2F;
+$letra-mediana:0.7rem;
+$letra-grande:1.1rem;
+$letra-grande2:2.6rem;
+
+$letra-normal:em(10); // funcion para devolver conversion de px a em, los valores inicialmente fueron puestos en px, y son pasados como parametro.
+$margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con cambiar esto seria suf, interface
+
+.footer-top{
+    background-color: $gris-claro;  
+    height:2.2rem;
+    display:block;
+}
+
+//i{   aplica a todos los iconos al sass crear main.css, rever
+.footer-box__social i{
+    color:#D4D4D4;
+    font-size:2rem;
+}
+
+
+.footer-main{ /* basado en https://www.armytech.com.ar/ footer main */
+    //background-color:  $gris-nublado; //no tiene suficiente contraste
+    background-color:$gris-oscuro;
+   // width:100%;
+    padding-top:2.5%; //un poco mas alto
+    padding-bottom:2.5%;
+    
+    
+    font-family: "Rajdhani", sans-serif; /* font candidato var o clase, en carpeta typo*/
+    font-weight: 200; //puede ir arriba/
+    letter-spacing: 0.02em; 
+    font-size: em(14); // em seria mas responsive que pixel. se creo funcion para adaptar px a em
+    line-height: 1.42857em;
+  //  padding-left:276.781px ;
+  //  padding-right:276.781px ;
+}
+
+.footer-box{
+ //   margin-left:em(276.781); /*px codigo pag*/
+  //   margin-right:em(276.781);
+    margin-left:$margen-centrado; // me gusta como se comporta el margen con % al bajar o  subir css res (% relative to container size)
+    margin-right:$margen-centrado;
+    color:white;
+    display:flex; 
+    flex-direction:row;
+    justify-content: space-between;
+    
+    &__info, &__lista > li{ /*rever*/
+        margin-bottom:em(6);
+    }
+
+    &__lista{
+        list-style-type: none;
+    }
+
+     
+    &__titulo{
+        padding-bottom:4px;
+        font-size: 1.1rem;
+
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &::after{
+            content: ""; //necesario para que after funcione
+            border-bottom:2px solid orangered;
+            //width:18%; //al tomar porcentaje depende del largo de bloque
+            width:em(18);
+            display:block;
+            border-width: 1.5px;
+            padding-top:4px;
+        }  
+    }
+ 
+
+    &__link-contacto{
+        color:hsl(0, 0%, 64%); // background mas claro 
+        text-decoration: none; // sin underline
+    }
+
+    &__horario, &__tel, &__caract{
+        color:$naranja-vitamina;
+    }
+
+    &__tel{
+        font-size:medium; //codigo repetido, rever
+        font-weight:800;
+    }
+
+    &__caract{
+        font-size:medium;
+    }
+
+    &__ofertas{
+        border-left:grey solid;
+        padding-left:2%;
+        border-width: 1px;
+    }
+
+    &__login{
+        background-color:#888888;
+        padding-left:10px;
+        border-style:none;
+        height:25px;
+        width:90%;
+        &:hover{
+            background:  rgb(167, 154, 154);
+        }
+    }  
+
+    &__btn-enviar{ //btn-enviar
+         
+        margin:0 auto;
+        background-color: white;
+        border-radius: 6px;
+        border-style: none;
+        padding:5px;
+        margin-left:50%;
+        margin-top:2%;
+        padding-left:15px;
+        padding-right:15px;    
+    }
+
+    &__social a{
+        text-decoration: none;
+        &:hover{
+            transition: 0.8s; //vel
+            filter:brightness(125%)
+        }
+    }
+
+    
+
+
+}
+
+input::placeholder{
+    color:hsl(0, 0%, 84%);  
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.footer-bottom{ // footer main
+    background-color: white;
+    color:grey;
+    
+    display:inline-block;
+    padding-bottom:4%;
+    margin-left:$margen-centrado;
+     
+    &__msg{
+        font-family: "Rajdhani", sans-serif; /* font candidato var o clase, en carpeta typo*/
+        font-weight: 200; //puede ir arriba/
+        letter-spacing: 0.02em; 
+         
+        font-size:em(11); /*preferi no usar px para no necesitar tanto media queries*/
+        line-height: 1.42857em;
+        margin-top:4%;
+    }
+}
+
+ 
+ 
+//smartphones y tablets 
+@media (max-width:769px){ 
+//@media (max-width:1100px)  ){ // antes de laptop
+    .footer-main, .footer-bottom__msg{ 
+       font-size:em(10);
+    }
+
+    
+    .footer-bottom{
+        padding-left:0;
+        margin-left:0.5rem;
+    }
+
+    .footer-box{ 
+    //   gap:1.5em; // no quiero que desaparezcan!
+    display:flex;    
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 0.5rem;
+         
+    margin-left:0.5rem; /*rever, que quede mas legible*/
+    margin-top:6%;
+    margin-bottom:2%;
+    &__ofertas{
+        border-style:none;
+        border-width:0;
+        padding-left:0;
+    }
+ 
+    &__ayuda, &__info{
+        flex:50%; // flex basis 50% del width 
+        margin-bottom:6%;
+    }  
+    
+    &__titulo{
+        font-size:0.9rem; //para que haga salto de linea
+        
+    }
+
+    }
+
+}
+
+
+@media (min-width:769px) and (max-width:1280px){ // laptops  
+    .footer-bottom{
+        margin-top:0;
+    }
+    .footer-box{
+        margin-right:9%;
+        margin-left:9%;
+
+        &__titulo{
+            font-size:1.1rem;
+        }
+
+        &__msg{
+            font-size:$letra-mediana;
+        }
+    }
+
+    .footer-main{
+        font-size:0.9rem;  
+    }
+ 
+}
+ 
+ 
+
+@media (min-width:$breakpoint-high){
+    .footer-main, .footer-box__titulo, .footer-bottom__msg{
+        font-size:$letra-grande2;
+    }
+}
+
+
+//en modo oscuro 
+@media (prefers-color-scheme: dark){
+    img{
+        opacity: 0.75;
+        transition: opacity .5s ease-in-out;
+
+    }
+
+    img:hover{
+        opacity:1;
+    }
+
+    .menu-toggle__label span{ /*en modo oscuro no se ve bien el negro*/
+        background-color: white;
+    }
+
+    .menu-toggle__label{
+        background-color: hsl(0, 0%, 40%);
+    }
+
+}

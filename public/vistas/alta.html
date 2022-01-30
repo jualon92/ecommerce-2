@@ -1,0 +1,111 @@
+<div class="alta-container">
+    <!-- posicionar-->
+    <h1 class="alta-titulo">Alta</h1>
+    <div class="form-alta">
+        <!-- bloque, reutilizable-->
+        <form class="form-alta__formulario" autocomplete="off">
+
+            <div class="form-alta__nombre">
+                <!-- es necesario el div? podria hacer label, input, inline-block y ahorrarse la clase-->
+                <label class="form-alta__label-nombre" for="name">nombre: </label>
+                <input class="form-alta__input-datos form-alta__input-nombre" type="text" name="name" id="name"
+                    placeholder="nombre" required tabindex="1"> <!-- mas comodo tab index-->
+                <div class="notificacion"></div>
+            </div>
+
+
+            <div class="form-alta__precio">
+                <label class="form-alta__label-precio" for="precio">precio:</label>
+                <input class="form-alta__input-datos form-alta__input-precio" type="text" name="precio" id="precio"
+                    placeholder="precio" required tabindex="2">
+                <div class="notificacion"></div>
+            </div>
+
+            <div class="alta__stock">
+                <label class="form-alta__label-stock" for="stock">stock:</label>
+                <input class="form-alta__input-datos form-alta__input-stock" type="text" name="stock" id="stock"
+                    placeholder="numero" required tabindex="2">
+                <div class="notificacion"></div>
+            </div>
+
+            <div class="form-alta__marca">
+                <label class="form-alta__label-marca" for="marca">marca:</label>
+                <input class="form-alta__input-datos form-alta__input-marca" type="text" name="marca" id="marca"
+                    placeholder="marca" required tabindex="2">
+                <div class="notificacion"></div>
+            </div>
+
+            <div class="categoria">
+                <label class="form-alta__label" for="cate">elegir categoria:</label>
+                <input class="form-alta__input-datos " list="form-alta-lista" id="cate" name="cate">
+
+                <datalist id="form-alta-lista">
+                    <option value="Chocolate">
+                    <option value="Coconut">
+                    <option value="Mint">
+                    <option value="Strawberry">
+                    <option value="Vanilla">
+                </datalist>
+                <div class="notificacion"></div>
+            </div>
+
+            <div id="droparea" class="form-alta__drop-area">
+                <div class="ele">  <p> Subir Imagen al servidor con <b>file dialog</b> o <b>drag n drop</b> dentro del area punteada </div>
+                    <br>
+                    <input class="ele" type="file" id="foto" accept="image/*" onchange="formularioAlta.handlefiles(this.files)" > <!--archivos subidos input tipo file, this.files-->
+                    <!--cualquier archivo de img-->
+                  
+                    <label class="ele dialog button" for="foto">file dialog</label>
+                    <br><br>
+
+                    <progress class="ele" id="progressbar" max="100" value="0"> </progress>
+
+                <div id="gallery"><img width="100px" src="" alt=""></div>
+
+                </p>
+            </div>
+            <!-- <div>
+                <label class="form-alta__label-fotos" for="pfotos">cargar foto:</label>
+                <input class="form-alta__input-datos form-alta__input-foto" type="text" id="pfotos" name="pfotos">
+                <div class="notificacion"></div>
+            </div> -->
+
+            <div>
+                <!--    <label class="alta__label-detalles" for="alta-detalles">detalles</label>
+                        <textarea class="alta__input-detalles" name="alta-detalle"  id="comentarios-persona" cols="3"
+                            rows="3" tabindex="3"></textarea> -->
+                <label class="form-alta__label-detalles" for="form-alta-detalles">detalles</label>
+                <!--    <textarea class="form-alta__input-datos form-alta__detalles" name="form-alta-detalles"
+                    id="form-alta-detalles" cols="3" rows="3" tabindex="3"></textarea>-->
+                <input class="form-alta__input-datos form-alta__detalles" name="form-alta-detalles"
+                    id="form-alta-detalles" tabindex="3"></input>
+                <div class="notificacion"></div>
+            </div>
+
+            <div>
+                <label class="form-alta__label-envios" for="envioscargo">envios sin cargo:</label>
+                <input class="form-alta__input-datos form-alta__input-envios" type="checkbox" name="envioscargo"
+                    id="envioscargo">
+
+            </div>
+
+
+            <form class="form-alta__boton-ui">
+                <input class="form-alta__p" type="submit" value="Enviar">
+                <input class="form-alta__p" type="reset" value="Borrar">
+            </form>
+
+
+
+        </form>
+    </div>
+
+
+    <hr>
+    <h1>Listado de productos</h1>
+    <!-- 
+      <form class="form-alta__boton-ui">
+        <input class="form-alta__p" type="submit" value="Agregar">  
+    </form>   -->
+    <div id="listado-productos"></div>
+</div>
