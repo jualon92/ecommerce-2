@@ -17,10 +17,18 @@ const getProductos = async (req,res) => {
 /* Controller POST */
 const postProducto = async (req,res) => {
     let producto = req.body
-    //agregar
+    //agregar 
+     
     let productoAgregado = await api.guardarProducto(producto)
-
-    res.json(productoAgregado)
+    
+    console.log("largo " + Object.keys(productoAgregado).length)
+    if (!Object.keys(productoAgregado).length == 0){
+        res.json(productoAgregado)
+    }else{
+        console.log("no molestar al servidor con basura!")
+    }
+     
+     
 }
 
 /* Controller PUT */
@@ -29,6 +37,13 @@ const putProducto = async (req,res) => {
     let producto = req.body
     //actualizar
     let productoActualizado = await api.actualizarProducto(id,producto)
+
+    if (!Object.keys(productoActualizado).length == 0){
+        
+        res.json(productoActualizado)
+    }else{
+        console.log("no molestar al servidor")
+    }
 
     res.json(productoActualizado)
 }

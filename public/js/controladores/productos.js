@@ -65,12 +65,19 @@ class ProductoController extends ProductoModel {
     }
 
     async guardarProducto(producto) { // guarda y renderiza. rever, mala practica?
+         
+        
         let productoGuardado = await productoService.guardarProductoService(producto) //guarda en api
-        console.log(productoGuardado)
+    //    console.log("produ es : " +   Object.keys(productoGuardado).length)
+        
+            
+            this.productos.push(productoGuardado) //guarda en arr
 
-        this.productos.push(productoGuardado) //guarda en arr
-
-        renderTablaAlta(null, this.productos) //luego de pushear al array, renderiza nueva tabla de productos en api
+            renderTablaAlta(null, this.productos) //luego de pushear al array, renderiza nueva tabla de productos en api
+       
+          
+        
+        
     }
 
     getRegex() {
