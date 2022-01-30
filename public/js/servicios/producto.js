@@ -8,6 +8,7 @@ class ProductoService { //comunicarse con api
     }
 
     async guardarProductoService(producto) {
+        
         let productoGuardado = await http.post(this.URL_PRODUCTOS, producto) // al server
         console.log("produ guardado api " +  productoGuardado)
         return productoGuardado
