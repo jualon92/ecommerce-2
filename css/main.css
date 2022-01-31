@@ -495,6 +495,10 @@ body {
 }
 
 /* Checkout Payment Section - Start */
+.container_payment {
+  display: none;
+}
+
 .payment-form {
   padding-bottom: 10px;
   margin-right: 15px;
@@ -543,10 +547,10 @@ body {
 }
 
 .payment-form .title {
-  font-size: 1.4em;
+  font-size: 1em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 0.8em;
-  font-weight: bold;
+  font-weight: 400;
   padding-bottom: 8px;
 }
 
@@ -578,7 +582,7 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   padding-top: 19px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1;
 }
 
