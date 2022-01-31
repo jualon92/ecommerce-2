@@ -38,7 +38,7 @@ async function renderPago(preference) { // levantar archivo vistas/pago.html
     acu += subtotal
     refItems.innerHTML += `
             <span class="price summary-price">${subtotal}</span>
-            <p class="item-name">${item.title} x <span class="summary-quantity">${item.unit_price}</span></p>
+            <p class="item-name">${item.title} x <span class="summary-quantity">${item.quantity}</span></p>
         `
   }
 

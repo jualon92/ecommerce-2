@@ -4,7 +4,7 @@ $breakpoint-high:2400px;
 $color-naranjish:#FD8A2F;
 $letra-mediana:0.7rem;
 $letra-grande:1.1rem;
-$letra-grande2:2.6rem;
+$letra-grande2:1.6rem;
 
 $letra-normal:em(10); // funcion para devolver conversion de px a em, los valores inicialmente fueron puestos en px, y son pasados como parametro.
 $margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con cambiar esto seria suf, interface
@@ -211,7 +211,7 @@ input:focus::placeholder {
 }
 
 
-@media (min-width:769px) and (max-width:1280px){ // laptops  
+@media (min-width:769px) and (max-width:$breakpoint-high){ // laptops  
     .footer-bottom{
         margin-top:0;
     }
