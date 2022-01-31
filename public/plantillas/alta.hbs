@@ -26,9 +26,17 @@
                 </td>
                   <td class="primerSel">{{detalles}}</td>
                 {{#if envio}}
-                    <td class="primerSel" >Si</td>
+                    <td class="primerSel" >
+                       <input  class="checkbox-envio toggled"  type="checkbox" checked="true"  disabled="disabled" value="true"   
+                   >
+                  
+                    </td>
                 {{else}}
-                    <td class="primerSel">No</td>
+                    <td class="primerSel">
+                        <input   class="checkbox-envio untoggled"  type="checkbox"   disabled="disabled" value="false" 
+                   >
+
+                    </td>
                 {{/if}}
                
                 <td>

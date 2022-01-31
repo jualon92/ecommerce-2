@@ -73,7 +73,7 @@ class ProductoModelMongoDB {
         try {
             await ProductoModel.updateOne({_id:id},{$set: producto})
             //console.log(producto)
-            let productoActualizado = await ProductoModelfindOne({_id:id}).lean()
+            let productoActualizado = await ProductoModel.findOne({_id:id}).lean()
             return Mongo_DB.genIdKey(productoActualizado)
         }
         catch(error) {

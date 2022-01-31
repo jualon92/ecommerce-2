@@ -64,22 +64,22 @@ class ProductoController extends ProductoModel {
         return this.productos
     }
 
-    async guardarProducto(producto) { 
-         
-      
+    async guardarProducto(producto) {
+
+
         let productoGuardado = await productoService.guardarProductoService(producto) //guarda en api
-        console.log("produ es : " +   Object.keys(productoGuardado).length)
-        if (!Object.keys(productoGuardado).length == 0){
-            
+        console.log("produ es : " + Object.keys(productoGuardado).length)
+        if (!Object.keys(productoGuardado).length == 0) {
+
             this.productos.push(productoGuardado) //guarda en arr
 
             renderTablaAlta(null, this.productos) //luego de pushear al array, renderiza nueva tabla de productos en api
-        }else{
+        } else {
             console.log("rechazo")
         }
-          
-        
-        
+
+
+
     }
 
     getRegex() {
@@ -101,11 +101,31 @@ class ProductoController extends ProductoModel {
         let arrTargets = Array.from(targets)
         let arrValoresTargets = arrTargets.map(ele => ele.innerHTML)
 
-        //rever
-        if (ref.classList.contains("inactive")) {   //si esta inactivo, activar
-            for (let i = 0; i < targets.length; i++) { //refactorizar, feo
+       
 
-                if (i == 5) { //grab src
+        //rever
+        if (ref.classList.contains("inactive")) {   //si esta inactivo 
+            for (let i = 0; i < targets.length; i++) { //refactorizar, feo
+                if (i == 7) {
+                    let boton =  arrTargets[7].querySelector(".checkbox-envio")
+                   boton.disabled = false
+                    boton.addEventListener("click" ,  e =>{
+                        if (boton.classList.contains("toggled")){  
+                            boton.classList.replace("toggled", "untoggled")
+                            console.log("quito clase")
+                            console.log(boton.classList)
+                    }else if (boton.classList.contains("untoggled")){  
+                        
+                        boton.classList.replace("untoggled", "toggled")
+                        console.log("agrego clase")
+                        boton.classList.add("toggled")
+                        console.log(boton.classList)
+                             
+                        }
+                    })
+
+                }
+                else if (i == 5) { //grab src
                     let src = arrTargets[5].querySelector(".imagenAlta").src
                     console.log(src)
                     targets[i].innerHTML = `<input type="text" id="fname" name="fname" value="${src}"><br><br>`
@@ -114,30 +134,36 @@ class ProductoController extends ProductoModel {
 
                 }
             }
+ 
 
             ref.classList.replace("inactive", "active")
             //  console.log("valor " + ref.innerHTML)
             ref.innerHTML = "Guardar"
-            let inputs = Array.from(ref.parentElement.parentElement.querySelectorAll("input")) //la idea es que si hay un mal caracter actualizar este greyed out
-
+            let inputs = Array.from(ref.parentElement.parentElement.querySelectorAll("input")) //la idea es que si hay un mal caracter actualizar este gris
+            console.log(inputs)
             inputs.forEach((input, index) => { //validacion en actualizar
                 input.addEventListener('input', () => { //input value has  changed
-              //      console.log("hubo input")
-              //      console.log(input.value)
-              //      console.log(index)
-             //       console.log(getRegex())
+                    //      console.log("hubo input")
+                    //      console.log(input.value)
+                    //      console.log(index)
+                    //       console.log(getRegex())
+
+
                     let regex = this.getRegex()
                     let lista = [true, true, true, true, true, true, true]
                     lista[index] = validar(input.value, regex[index], index)
-                    ref.disabled = lista.some(ele => ele === false) //any
+                    ref.disabled = lista.some(ele => ele === false) //any */
 
 
                 })
             })
 
-
+            
         } else {
+            arrTargets[7].querySelector(".checkbox-envio").disabled = true 
+             
             ref.classList.replace("active", "inactive")
+            console.log("guardando")
             let inputs = Array.from(ref.parentElement.parentElement.querySelectorAll("input"))
             //  console.log("inputs")
 
@@ -145,12 +171,34 @@ class ProductoController extends ProductoModel {
             //    console.log(valores)
             //    let valores = getListaAtributos(targets)
             console.log(leerProductoActualizado(valores))
+            console.log("producto antes")
+
             let producto = leerProductoActualizado(valores)
+            console.log(producto)
+
+             
+            console.log("prod nuevo")
+            console.log(producto.envio)
+            if (arrTargets[7].querySelector(".checkbox-envio").classList.contains("toggled")){
+                producto.envio = true
+                console.log("es v")
+            }else{
+                producto.envio = false 
+                console.log("es falso")
+            }
+
+            console.log("nuevo prod envio", producto.envio)
+
             let productoActualizado = await productoService.actualizarProductoService(id, producto)
+            console.log("dibujando")
+            console.log(productoActualizado) //empty
+
+
             let index = this.productos.findIndex(producto => producto.id == productoActualizado.id)
             this.productos.splice(index, 1, productoActualizado)
-
+            console.log(this.productos)
             renderTablaAlta(null, this.productos)
+           
         }
     }
 

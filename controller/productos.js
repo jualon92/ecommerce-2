@@ -37,13 +37,13 @@ const putProducto = async (req,res) => {
     let producto = req.body
     //actualizar
     let productoActualizado = await api.actualizarProducto(id,producto)
-
+/*
     if (!Object.keys(productoActualizado).length == 0){
         
         res.json(productoActualizado)
     }else{
         console.log("no molestar al servidor")
-    }
+    }*/
 
     res.json(productoActualizado)
 }

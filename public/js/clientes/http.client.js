@@ -27,8 +27,10 @@ class Http {
 
     /* PUT */
     async put(url, id, dato) {
+        console.log(url + "/" +  id)
         try {
-            return await fetch(url + "/" +  id, {
+
+            return await fetch(url  +  id, {
                 method: 'put',
                 body: JSON.stringify(dato),
                 headers: { 'content-type': 'application/json' }
@@ -36,6 +38,7 @@ class Http {
             }).then(r => r.json())
         }
         catch (error) {
+            console.error("s")
             console.error('ERROR PUT', error)
         }
     }
