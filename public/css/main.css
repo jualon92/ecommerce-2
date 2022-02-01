@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap");
-@import url(c:\Users\rober\Contacts\ecommerce-2\public\sass\vendors\fontello-dabf156c\css\fontello.css);
+@import url(c:\Users\rober\.vscode\ecommerce-2-1\public\sass\vendors\fontello-dabf156c\css\fontello.css);
 *,
 *::after,
 *::before {
@@ -816,7 +816,8 @@ body {
 }
 
 .search-bar__carrito-img {
-  margin-left: 1rem;
+  margin-left: 0.1rem;
+  margin-top: 0.5rem;
   max-width: 100%;
   font-size: 2.2rem;
   color: white;
@@ -826,6 +827,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.fa-layers-counter {
+  border-radius: 3px;
+  padding: 2px;
+  top: -10px;
+  left: -5px;
+  position: relative;
 }
 
 .search-bar__form-search {
@@ -1362,7 +1371,7 @@ input:focus::placeholder {
 
 @media (min-width: 1200px) {
   .cards-container {
-    gap: 2em;
+    gap: 3.2em;
   }
 }
 
