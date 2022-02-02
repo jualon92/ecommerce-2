@@ -36,8 +36,8 @@
             </div>
 
             <div class="categoria">
-                <label class="form-alta__label" for="cate">elegir categoria:</label>
-                <input class="form-alta__input-datos " list="form-alta-lista" id="cate" name="cate">
+                <label class="form-alta__label" for="cate" >elegir categoria:</label>
+                <input class="form-alta__input-datos " list="form-alta-lista" id="cate" name="cate"  placeholder="categoria" required tabindex="2" >
 
                 <datalist id="form-alta-lista">
                     <option value="Chocolate">
@@ -50,7 +50,7 @@
             </div>
 
             <div id="droparea" class="form-alta__drop-area">
-                <div class="ele">  <p> Subir Imagen al servidor con <b>file dialog</b> o <b>drag n drop</b> dentro del area punteada </div>
+                <div class="ele">  <p> Subir Imagen al servidor con <b>file dialog</b> o <b>Drag and Drop</b> dentro del area punteada </div>
                     <br>
                     <input class="ele" type="file" id="foto" accept="image/*" onchange="formularioAlta.handlefiles(this.files)" > <!--archivos subidos input tipo file, this.files-->
                     <!--cualquier archivo de img-->
@@ -77,7 +77,7 @@
                 <label class="form-alta__label-detalles" for="form-alta-detalles">detalles</label>
                 <!--    <textarea class="form-alta__input-datos form-alta__detalles" name="form-alta-detalles"
                     id="form-alta-detalles" cols="3" rows="3" tabindex="3"></textarea>-->
-                <input class="form-alta__input-datos form-alta__detalles" name="form-alta-detalles"
+                <input class="form-alta__input-datos form-alta__detalles" name="form-alta-detalles" placeholder="detalles"
                     id="form-alta-detalles" tabindex="3"></input>
                 <div class="notificacion"></div>
             </div>
