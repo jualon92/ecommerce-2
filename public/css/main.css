@@ -285,6 +285,10 @@ body {
   opacity: 1;
 }
 
+.card__stock {
+  margin-top: 5px;
+}
+
 .card:hover, .card:focus {
   -webkit-transform: scale(1.03);
   transform: scale(1.03);
@@ -313,7 +317,21 @@ body {
           transition-delay: 0s;
 }
 
+.card__precio {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 6px;
+}
+
 .card__content {
+  gap: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: absolute;
   bottom: 0;
   padding: 3em 1em 1em;
@@ -709,7 +727,7 @@ body {
               NAV BAR
   *********************************/
 .nav-bar {
-  background-color: #565656;
+  background-color: #282A35;
 }
 
 .nav-bar__nav-list {
@@ -731,15 +749,19 @@ body {
   color: white;
 }
 
+.nav-bar__nav-link.active {
+  background-color: #04AA6D !important;
+}
+
 .nav-bar__nav-link:hover, .nav-bar__nav-link:focus {
-  background-color: #AAA492;
+  background-color: #888888;
 }
 
 /*********************************
               SEARCH BAR
   *********************************/
 .search-bar {
-  background-color: #9daaaf;
+  background-color: #7e8c91;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1076,11 +1098,20 @@ body {
 
 .footer-box__info, .footer-box__lista > li {
   /*rever*/
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.475rem;
 }
 
 .footer-box__lista {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 270px;
+  margin-bottom: 0.475rem;
 }
 
 .footer-box__titulo {
@@ -1100,8 +1131,15 @@ body {
 }
 
 .footer-box__link-contacto {
-  color: #a3a3a3;
+  color: #cecece;
   text-decoration: none;
+}
+
+.footer-box__link-contacto:hover {
+  text-decoration: underline;
+  color: #ffffff;
+  -webkit-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s;
 }
 
 .footer-box__horario, .footer-box__tel, .footer-box__caract {
@@ -1127,7 +1165,7 @@ body {
   background-color: #888888;
   padding-left: 10px;
   border-style: none;
-  height: 25px;
+  height: 38px;
   width: 90%;
 }
 
@@ -1141,7 +1179,6 @@ body {
   border-radius: 6px;
   border-style: none;
   padding: 5px;
-  margin-left: 50%;
   margin-top: 2%;
   padding-left: 15px;
   padding-right: 15px;
@@ -1718,6 +1755,10 @@ table, th, td {
   display: block;
   margin-bottom: 15px;
   margin-top: 15px;
+}
+
+.dialog:hover {
+  background-color: #6cb46c;
 }
 
 .button {

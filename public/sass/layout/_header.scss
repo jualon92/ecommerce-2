@@ -9,7 +9,8 @@ $gris-oscuro:hsl(0, 0%, 24%);
 
 $natura-colores: (
   'color-header':#515E63, 
-  'color-headerbg': #515E63,
+ // 'color-headerbg': #515E63,
+ 'color-headerbg': #515E63,
   'searchbar-primary': #C9D8B6,
   'color-buscar': #F1ECC3,
 );
@@ -23,8 +24,9 @@ $naranja-gris: (
  
 $mapa-gris: (
   'color-header':white,
-  'color-headerbg':$gris-nublado,
-  'searchbar-primary':hsl(197, 10%, 65%),
+  //'color-headerbg':$gris-nublado,
+  'color-headerbg':#282A35,
+  'searchbar-primary':hsl(195, 8%, 53%),
   'color-buscar':hsl(197, 10%, 55%),
 );
 
@@ -69,8 +71,8 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
 .nav-bar {
 
    // background-color: $color-headerbg;
-    background-color: get-color("color-headerbg"); 
-     
+     background-color: get-color("color-headerbg"); 
+   //  background-color: #2C2C35;
   &__nav-list { /*con flex requiere menos codigo*/
     display: flex;
     list-style-type: none;
@@ -78,17 +80,22 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
      
   }
 
-   
+  
 
   &__nav-link { /*inline no muestra padding top padding bottom*/
     display: block;
     padding: 1em 2em;
     text-decoration: none;
     color:get-color("color-header");
+
+    &.active{ //chain selectors
+   //   background-color: #04AA6D!important;  //bajo contraste
+   background-color: #04AA6D !important;
+    }
   }
 
   &__nav-link:hover, &__nav-link:focus{   //que marque cual elijo  
-    background-color: #AAA492;
+    background-color: #888888;
   }
 }
 

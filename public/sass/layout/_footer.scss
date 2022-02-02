@@ -50,11 +50,16 @@ $margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con
     justify-content: space-between;
     
     &__info, &__lista > li{ /*rever*/
-        margin-bottom:em(6);
+      //  margin-bottom:em(6);
+       margin-bottom:  0.475rem;
     }
 
     &__lista{
         list-style-type: none;
+        display: flex;
+    flex-direction: column;
+    width: 270px;
+    margin-bottom: 0.475rem;
     }
 
      
@@ -78,8 +83,16 @@ $margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con
  
 
     &__link-contacto{
-        color:hsl(0, 0%, 64%); // background mas claro 
+      //  color:#c5c2c2;
+      color:#cecece;
+      //  color:hsl(0, 7%, 86%); // background mas claro 
         text-decoration: none; // sin underline
+
+        &:hover{
+            text-decoration: underline;
+            color:#ffffff;
+            transition: all 0.3s ease-in 0s;
+        }
     }
 
     &__horario, &__tel, &__caract{
@@ -105,7 +118,8 @@ $margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con
         background-color:#888888;
         padding-left:10px;
         border-style:none;
-        height:25px;
+        //height:25px;
+        height: 38px;
         width:90%;
         &:hover{
             background:  rgb(167, 154, 154);
@@ -119,7 +133,7 @@ $margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con
         border-radius: 6px;
         border-style: none;
         padding:5px;
-        margin-left:50%;
+       // margin-left:50%;
         margin-top:2%;
         padding-left:15px;
         padding-right:15px;    
