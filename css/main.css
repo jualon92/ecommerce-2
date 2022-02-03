@@ -199,16 +199,18 @@ body {
 .form-favorito {
   display: inline-block;
   position: relative;
-  bottom: 48%;
+  top: 20px;
   width: 25px;
   left: 85%;
 }
 
-.agrandar-carta {
-  -webkit-transform: scale(1.03) !important;
-  transform: scale(1.03) !important;
-  -webkit-transform-origin: bottom !important;
-  transform-origin: bottom !important;
+.carta-grande {
+  -webkit-transform: scale(1.06);
+  transform: scale(1.06);
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  -webkit-box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
+          box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
 }
 
 .btn-fav {
@@ -239,6 +241,14 @@ body {
   opacity: 1;
 }
 
+.internal-clock {
+  color: black;
+}
+
+.btn-fav__icon:hover {
+  color: aquamarine;
+}
+
 .card {
   outline: none;
   -webkit-box-flex: 1;
@@ -259,6 +269,28 @@ body {
   -webkit-transition: all .2s;
   transition: all .2s;
   text-decoration: none;
+  /*
+    &:hover,&:focus { 
+        -moz-transform: scale(1.06);
+        -webkit-transform: scale(1.06);
+        transform: scale(1.06);
+        -moz-transform-origin: bottom;
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, .05), 0 3px 3px rgba(0, 0, 0, .01);
+       
+    }*/
+  /*
+    &:hover &__image  {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px); 
+        clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
+        transform: scale(1.1) rotate(-2deg);
+        transition-delay: 0s;
+         
+    }*/
+  /*  &:hover &__content {
+        padding-top: 4em;
+    }*/
 }
 
 .card__description {
@@ -267,8 +299,9 @@ body {
 
 .card__btn-comprar {
   position: relative;
-  bottom: 4.5%;
-  left: 50%;
+  left: 37%;
+  z-index: 1000;
+  top: 180px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   /* text-align: center; */
@@ -296,15 +329,6 @@ body {
   margin-top: 5px;
 }
 
-.card:hover, .card:focus {
-  -webkit-transform: scale(1.03);
-  transform: scale(1.03);
-  -webkit-transform-origin: bottom;
-  transform-origin: bottom;
-  -webkit-box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
-          box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
-}
-
 .card__image {
   background-size: cover;
   height: 200px;
@@ -313,15 +337,6 @@ body {
   background-position: center;
   -webkit-transition: all .2s;
   transition: all .2s;
-}
-
-.card:hover .card__image {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
-  clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
-  -webkit-transform: scale(1.1) rotate(-2deg);
-          transform: scale(1.1) rotate(-2deg);
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
 }
 
 .card__precio {
@@ -345,12 +360,8 @@ body {
   height: 230px;
   width: 100%;
   z-index: -1;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-.card:hover .card__content {
-  padding-top: 4em;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .card-placeholder:nth-child(10n + 1) .card__content {

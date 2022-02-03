@@ -12,6 +12,8 @@ function despertarBotonCant(ele) {
         ev.preventDefault() //evitar que form cause un refresh, podria hacerse en el for each
         contadorDisplay++
         display.innerHTML = contadorDisplay;
+        console.log("display: ")
+        console.log(display)
         console.log(nombre.innerHTML + ": " + contadorDisplay)
     })
 
@@ -24,7 +26,8 @@ function despertarBotonCant(ele) {
             display.innerHTML = contadorDisplay;
 
         }
-        console.log(nombre.innerHTML + ": " + contadorDisplay)
+        console.log(display)
+        console.log(nombre.innerHTML + ": " + contadorDisplay + "!")
     })
 }
 
@@ -59,6 +62,7 @@ async function renderPlantillaListado(listado) { //paso como parametro lista fil
 
 function agregarCarrito(e, id, ref) { // 
     e.preventDefault()
+   // console.log(ref.parentNode.parentNode.querySelector(".internal-clock").innerHTML)
     let contadorDisplay = ref.parentNode.parentNode.querySelector(".internal-clock").innerHTML
     console.log(contadorDisplay) // rever mejor manera
 
@@ -68,7 +72,7 @@ function agregarCarrito(e, id, ref) { //
     if (contadorDisplay) { // si se tiene cantidad en display
         carritoController.agregarAlCarritoSuma(producto, contadorDisplay)
     } else{
-        console.log("agregar carrito")
+        console.log("agregar carrito uno solo ")
         console.log(producto)
         carritoController.agregarAlCarrito(producto) //para que dos funciones? podria detectar que no hay cantidad y sumar de a uno.   No utilizo display = sumar de a 1, utilizo display = sumar de contador.
     }
@@ -112,7 +116,38 @@ async function initInicio() {
         }
 
 
+
     })
+    //hover - refactor
+    let arrCartas = document.querySelectorAll(".card")
+    for (let i = 0; i< arrCartas.length; i++) {
+        document.querySelectorAll(".card")[i].addEventListener("mouseover", e => {
+            document.querySelectorAll(".card")[i].classList.add("carta-grande")
+   //         console.log("agregada clase a a carta")
+    
+        } )
+        document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseover", e => {
+            document.querySelectorAll(".card")[i].classList.add("carta-grande")
+     //       console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
+        } )
+    
+    
+        //exit
+        document.querySelectorAll(".card")[i].addEventListener("mouseout", e => {
+            document.querySelectorAll(".card")[i].classList.remove("carta-grande")
+      //      console.log("agregada clase a a carta")
+    
+        } )
+    
+    
+        document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseout", e => {
+            document.querySelectorAll(".card")[i].classList.remove("carta-grande")
+       //     console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
+        } )
+        
+    }
+
+    
 
 }
 
