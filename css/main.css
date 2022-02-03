@@ -299,9 +299,9 @@ body {
 
 .card__btn-comprar {
   position: relative;
-  left: 37%;
+  bottom: 4.6%;
   z-index: 1000;
-  top: 180px;
+  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   /* text-align: center; */
@@ -342,7 +342,6 @@ body {
 .card__precio {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin-bottom: 6px;
 }
 
 .card__content {
