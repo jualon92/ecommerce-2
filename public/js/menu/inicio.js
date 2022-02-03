@@ -95,6 +95,7 @@ async function initInicio() {
 
     document.querySelector('.section-cards__header p').innerHTML = `Se encontraron ${productos.length} productos`
     document.querySelector(".fa-layers-counter").innerText = carritoController.getTotalCarrito()
+    document.querySelector(".fa-layers-counter").style.display = "inline-block"
     const botonBusqueda = document.querySelector(".search-bar__form-submit")
 
     botonBusqueda.addEventListener("click", (ev) => {
@@ -115,7 +116,7 @@ async function initInicio() {
 
         }
 
-
+         
 
     })
     //hover - refactor
