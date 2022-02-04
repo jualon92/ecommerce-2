@@ -8,9 +8,12 @@
  
 
 .contenedor-btn-suma{
-    position: relative;
-    bottom: 25%;
+    position: absolute;
+    bottom: 40px;
     left: 50%;
+ //   position: relative;
+  //  bottom: 25%;
+  //  left: 50%;
     display:flex;
     flex-direction:row;
     justify-content: space-between;

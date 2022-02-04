@@ -9,7 +9,8 @@ class FormularioAlta {
         /^[0-9]+$/, //regexp stock
         /^.+$/, //regexp marca
         /^.+$/, //regexp categoria 
-        /^.+$/, //regexp detalles
+     //   /^.+$/, //regexp detalles
+      /^.{1,100}$/ //no mas de 100 palabras o la carta se desacomoda por largo comentario
     ]
 
     //drag n drop
