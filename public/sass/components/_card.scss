@@ -142,8 +142,35 @@ $tiempo-fade:0.5s;
     text-decoration: none; // parent de contenedor flex no tenga underline
 
     &__description{
-        font-size:13px;
-        min-height: 45px;
+        font-size:15px;
+      //  min-height: 45px;
+      min-height: 59px;
+        transform: translateY(-20px);
+    }
+    &__marca{
+       // margin-top: -5px;
+       transform: translateY(-10px);
+    }
+
+     &__pepe  { // no puedo mezclar transition con transform, entonces utiliza el contenedor para cambiar pos mediante transform:transitionY(-n) (mas comodo)
+        transform: translateY(-16px);
+    }
+    &__linea{
+      //   position:sticky;
+       
+        transform:scale(0);
+         transition:transform 700ms ease;
+        transform-origin:left;
+        height: 3px;
+        background:#6ADE96;
+        
+     //   transform: translateY(-11px);
+
+    }
+
+    
+    &:hover &__linea{
+        transform:scale(1);
     }
     &__btn-comprar{   
         position: relative;
@@ -214,6 +241,7 @@ $tiempo-fade:0.5s;
      //   margin-top: 7px;
      //margin-bottom:2px;
      margin-right: 5px;
+      transform: translateY(-17px);
     // margin-top: 5px;
     }
     &__content {
@@ -307,12 +335,22 @@ $tiempo-fade:0.5s;
             width: 40%;
             clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
         }
-        &__content {
+        &__content { 
             top: 0;
             padding-left: 45%;
         }
     }
+
+     
 }
  
-
-  
+ 
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        animation-duration: 0.01ms!important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
+}
