@@ -23,7 +23,17 @@ app.use('/api/carritos', routerCarrito)
 app.use('/upload', routerUpload)
 
 
+//console.log(process.env.PUBLIC)
+//// 
+console.log("process.env.PORT", process.env.PORT)
+console.log("process.env.TIPO", process.env.TIPO)
+console.log("process.env.CNX", process.env.CNX)
+///// levantar desde la linea de comandos
+
+
 // ------- Server Listen --------
-const PORT = process.env.PORT || config.PORT
+//const PORT = process.env.PORT || config.PORT //env port no estaba seteado entonces usaba config.port  string
+
+const PORT = config.PORT  // config toma de package.json
 const server = app.listen(PORT, () => console.log(`Servidor express escuchando en el puerto ${PORT}`))
 server.on('error', error => console.log(`Error en servidor express: ${error.message}`))

@@ -124,11 +124,16 @@ async function initInicio() {
     for (let i = 0; i< arrCartas.length; i++) {
         document.querySelectorAll(".card")[i].addEventListener("mouseover", e => {
             document.querySelectorAll(".card")[i].classList.add("carta-grande")
+            document.querySelectorAll(".card__linea")[i].classList.add("dibujar-linea")
+
    //         console.log("agregada clase a a carta")
     
         } )
         document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseover", e => {
+            console.log("agrando")
             document.querySelectorAll(".card")[i].classList.add("carta-grande")
+            console.log("mantengo linea")
+            document.querySelectorAll(".card__linea")[i].classList.add("dibujar-linea")
      //       console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
         } )
     
@@ -136,6 +141,8 @@ async function initInicio() {
         //exit
         document.querySelectorAll(".card")[i].addEventListener("mouseout", e => {
             document.querySelectorAll(".card")[i].classList.remove("carta-grande")
+            console.log("fuera de carta")
+          document.querySelectorAll(".card__linea")[i].classList.remove("dibujar-linea")
       //      console.log("agregada clase a a carta")
     
         } )
@@ -143,8 +150,12 @@ async function initInicio() {
     
         document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseout", e => {
             document.querySelectorAll(".card")[i].classList.remove("carta-grande")
+            console.log("quito linea")
+            document.querySelectorAll(".card__linea")[i].classList.remove("dibujar-linea")
        //     console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
         } )
+
+         
         
     }
 
