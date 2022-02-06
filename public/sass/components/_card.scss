@@ -1,3 +1,30 @@
+$width  : 220px;
+$height  : 460px;
+ $primary_color : #3084AC;
+$border_color--hover : lighten($primary_color, 80);
+$stroke : 2px;
+$border: $stroke solid darken($primary_color,10);
+$transition_duration:300ms;
+$pipeline_width: $width+$stroke;
+$pipeline_height: $height+$stroke;
+$pipes : 4;
+
+@function border-pipeline ($transition_duration, $pipe) {
+    @return $transition_duration*$pipe;
+}
+
+@mixin border-animation($dimension, $easing ,$pipe ) 
+{
+    transition: $transition_duration  $dimension $easing border-pipeline($transition_duration,$pipe);
+    -web-kit-transition: $transition_duration  $dimension $easing border-pipeline($transition_duration,$pipe);
+}
+  
+
+////////////
+
+
+
+
 $tiempo-fade:0.5s; 
 @mixin desaparecer{
     border-color:transparent; 
@@ -119,6 +146,11 @@ $tiempo-fade:0.5s;
 .btn-fav__icon:hover{
     color:aquamarine;
 }
+
+.dibujar-linea{
+    transform: scale(1)!important;
+}
+
 .card {
      outline: none;
     flex-grow: 1;
@@ -168,10 +200,10 @@ $tiempo-fade:0.5s;
 
     }
 
-    
+     /*
     &:hover &__linea{
         transform:scale(1);
-    }
+    } */
     &__btn-comprar{   
         position: relative;
         bottom: 4.6%;
@@ -307,7 +339,7 @@ $tiempo-fade:0.5s;
      
     @media (min-width: 1024px) {
         & {
-            min-width: 230px;
+            min-width: 280px;
         }
     }
 

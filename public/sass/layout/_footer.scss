@@ -180,12 +180,49 @@ input:focus::placeholder {
 }
 
  
+
+//tablets
+@media (min-width:767px) and (max-width:1000px){
+    .card__content{
+        gap:8px!important;
+        padding-right: 40px;
+        padding-top: 8px;
+    }
+    .card__description{
+        min-height: 39px!important;
+    }
+    .card__precio{
+        transform: translateY(-17px);
+        align-self: flex-start;
+    }
+
+    .card__stock{
+        align-self: flex-end;
+    }
+
+    .contenedor-btn-suma{
+        bottom: 110px!important;
+        left:45%!important;
+    }
+
+    .cards-container{
+        flex-direction: column!important;
+        
+    }
+
+    .card__btn-comprar{
+        top: -18px;
+        bottom:0;
+        left:55%;
+    }
+}
+ 
  
 //smartphones y tablets 
 @media (max-width:769px){ 
 //@media (max-width:1100px)  ){ // antes de laptop
     .footer-main, .footer-bottom__msg{ 
-       font-size:em(10);
+       font-size:1rem;
     }
 
     
@@ -199,9 +236,9 @@ input:focus::placeholder {
     display:flex;    
     flex-direction: row;
     flex-wrap: wrap;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
          
-    margin-left:0.5rem; /*rever, que quede mas legible*/
+    margin-left:1rem; /*rever, que quede mas legible*/
     margin-top:6%;
     margin-bottom:2%;
     &__ofertas{
@@ -213,8 +250,12 @@ input:focus::placeholder {
     &__ayuda, &__info{
         flex:50%; // flex basis 50% del width 
         margin-bottom:6%;
+        max-width: 190px;
+        overflow: overlay;
     }  
-    
+    &__lista{
+        width: 180px;
+    }
     &__titulo{
         font-size:0.9rem; //para que haga salto de linea
         
@@ -225,16 +266,48 @@ input:focus::placeholder {
 }
 
 
-@media (min-width:769px) and (max-width:$breakpoint-high){ // laptops  
+@media (min-width:765px) and (max-width:$breakpoint-high){ // laptops  
     .footer-bottom{
         margin-top:0;
     }
+
+    .footer-box__ayuda {
+        width: 203px;
+    }
+    .footer-box__lista{
+        width: 203px;
+    }
+
+    .footer-box__info{
+        overflow: overlay;
+    }
+
+    .cards-container{
+        gap:3.2em!important;
+    } 
+
+    .card__description{
+        max-height: 10px!important;
+    }
+
+    .card{
+        width: 260px!important;
+    }
+
+    .card__precio{
+        margin-right: 16px!important;
+      //  transform: translateY(-9px)!important;
+    }
+
+    .card__stock{
+        transform: translateY(-5px);
+    }
     .footer-box{
-        margin-right:9%;
-        margin-left:9%;
+        margin-right:6%;
+        margin-left:6%;
 
         &__titulo{
-            font-size:1.1rem;
+            font-size:1.3rem;
         }
 
         &__msg{
@@ -243,7 +316,7 @@ input:focus::placeholder {
     }
 
     .footer-main{
-        font-size:0.9rem;  
+        font-size:1.1rem;  
     }
  
 }
