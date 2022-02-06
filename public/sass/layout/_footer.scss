@@ -10,7 +10,10 @@ $letra-normal:em(10); // funcion para devolver conversion de px a em, los valore
 $margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con cambiar esto seria suf, interface
 
 .footer-top{
-    background-color: $gris-claro;  
+    //background-color: $gris-claro;  
+   
+        background-color: #d7d7d7  ;
+    
     height:2.2rem;
     display:block;
 }

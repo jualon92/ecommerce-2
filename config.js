@@ -21,8 +21,8 @@ console.log("process.env.CNX" , process.env.CNX)
 
 export default { //toma de scripts 
     PORT : process.env.PORT || 8080,
-    TIPO_DE_PERSISTENCIA: process.env.TIPO || "MEM",    // 'MEM', 'FILE', 'MONGODB'
+    TIPO_DE_PERSISTENCIA: process.env.TIPO || "MONGODB",    // 'MEM', 'FILE', 'MONGODB'
     //STR_CNX: 'mongodb://localhost/ecommerce'
    // STR_CNX: 'mongodb+srv://daniel:daniel123@misdatos.fs00f.mongodb.net/ecommerce2?retryWrites=true&w=majority'
-    STR_CNX: process.env.CNX || null
+    STR_CNX: process.env.CNX || 'mongodb+srv://jualon92:dadaismo128@cluster0.8hv3u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 }
