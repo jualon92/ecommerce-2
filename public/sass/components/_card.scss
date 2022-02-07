@@ -154,7 +154,8 @@ $tiempo-fade:0.5s;
     @include desaparecer; 
 
     &__icon{
-        color:hsl(0, 0%, 20%);
+      //  color:hsl(0, 0%, 20%);
+      color:rgb(247, 233, 207);
         font-size: 20px;
         padding-right: 10px; 
          

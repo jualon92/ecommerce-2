@@ -2,7 +2,7 @@
 //crear 20 contadores
 
 function despertarBotonCant(ele) {
-    let contadorDisplay = 0;
+    let contadorDisplay = 1;
     const btnAdd = ele.querySelector(".btn-sumar")
     const display = ele.querySelector(".internal-clock")
     const btnSust = ele.querySelector(".btn-sustraer");
