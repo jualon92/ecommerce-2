@@ -1172,6 +1172,19 @@ body {
   }
 }
 
+.fa-shipping-fast {
+  color: #00A650;
+}
+
+.envio__texto {
+  color: #20e680;
+}
+
+.card__envio {
+  margin-top: -30px;
+  margin-left: -6px;
+}
+
 .footer-top {
   background-color: #d7d7d7;
   height: 2.2rem;

@@ -1,11 +1,11 @@
 {{#if listado.length }}
 {{#each listado}}
 
- 
+
 
 
 <div class="card-placeholder">
-    <a class="card" >
+    <a class="card">
         <article class="card__article">
             <div class="card__image" style="
                               background-image: url({{foto}});
@@ -14,48 +14,52 @@
 
             <div class="card__content">
                 <h3 class="card__heading">{{nombre}}</h3>
-                 <div class="card__marca">{{marca}}</div>
-                <div class="card__pepe"> 
-              <hr class="card__linea  ">
+                <div class="card__marca">{{marca}}</div>
+                <div class="card__pepe">
+                    <hr class="card__linea  ">
                 </div>
                 <div class="card__description">
                     <p>
                         {{detalles}}
                     </p>
                 </div>
-                
+
                 <div class="card__precio">Precio : {{precio}}</div>
-                 <div class="card__stock">Stock : {{stock}}u</div>
-                   
-                     <form class="contenedor-btn-suma" id="btn-">
-        <button class="btn-cant btn-sustraer">-</button>
-        <div class="internal-clock">1</div>
-        <button class="btn-cant btn-sumar"> + </button>
-    </form>
-   
+                {{#if envio}}
+                <div class="card__envio"><i class="fas fa-shipping-fast"></i> <span class="envio__texto">Envio Gratis
+                    </span> </div>
+                {{/if}}
+                <div class="card__stock">Stock : {{stock}}u</div>
+
+                <form class="contenedor-btn-suma" id="btn-">
+                    <button class="btn-cant btn-sustraer">-</button>
+                    <div class="internal-clock">1</div>
+                    <button class="btn-cant btn-sumar"> + </button>
+                </form>
+
             </div>
-             <form class="form-favorito"> <!--hover, jerarquia, si favorito esta fuera de background/parent con hover  , uno desactiva a otro, no stackean-->
-        
-               <button class="btn-fav" type="button"> 
-            <i class="btn-fav__icon icon-heart"></i>
-        </button>
-        
-    </form>
-      
-        
-     
+
+            <form class="form-favorito">
+                <!--hover, jerarquia, si favorito esta fuera de background/parent con hover  , uno desactiva a otro, no stackean-->
+
+                <button class="btn-fav" type="button">
+                    <i class="btn-fav__icon icon-heart"></i>
+                </button>
+
+            </form>
+
+
+
 
         </article>
     </a>
-       <form class="form-comprar" id="carrito">
+    <form class="form-comprar" id="carrito">
         <button class="card__btn-comprar" onclick="agregarCarrito(event,'{{id}}',this)">sumar al carrito</button>
     </form>
-     
-     
+
+
 </div>
 {{/each}}
 {{else}}
 <h2>No se encontraron productos</h2>
 {{/if}}
-
- 

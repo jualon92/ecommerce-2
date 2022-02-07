@@ -9,6 +9,19 @@ $letra-grande2:1.6rem;
 $letra-normal:em(10); // funcion para devolver conversion de px a em, los valores inicialmente fueron puestos en px, y son pasados como parametro.
 $margen-centrado:15%; // si se quiere cambiar margen de footer main y bottom con cambiar esto seria suf, interface
 
+
+.fa-shipping-fast {
+   color: #00A650;
+}
+ 
+.envio__texto{
+    color: #20e680;
+}
+
+.card__envio{
+    margin-top: -30px;
+    margin-left: -6px;
+}
 .footer-top{
     //background-color: $gris-claro;  
    
