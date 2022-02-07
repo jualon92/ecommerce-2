@@ -345,7 +345,51 @@ body {
     }*/
   /*  &:hover &__content {
         padding-top: 4em;
+
+
     }*/
+  /*
+      
+    &-placeholder:nth-child(10n + 1) &__content { //rever
+        background-image: linear-gradient(to top, #b429f9, #26c5f3);
+    }
+
+    &-placeholder:nth-child(10n + 2) &__content {
+        background-image: linear-gradient(to top, #af1239, #cce269);    
+    }
+
+    &-placeholder:nth-child(10n + 3) &__content {
+        background-image: linear-gradient(to top, #0b3866, #3ddab2);    
+    }
+
+    &-placeholder:nth-child(10n + 4) &__content {
+        background-image: linear-gradient(to top, #f40752, #7c65a9);
+    }
+
+    &-placeholder:nth-child(10n + 5) &__content {
+        background-image: linear-gradient(to top, #1c3b41, #69d449);    
+    }
+
+    &-placeholder:nth-child(10n + 6) &__content {
+        background-image: linear-gradient(to top, #0a5df8, #ed2d53);    
+    }
+
+    &-placeholder:nth-child(10n + 7) &__content {
+        background-image: linear-gradient(to top, #661069, #30d26e);    
+    }
+
+    &-placeholder:nth-child(10n + 8) &__content {
+        background-image: linear-gradient(to top, #702b19, #cec360);    
+    }
+
+    &-placeholder:nth-child(10n + 9) &__content {
+        background-image: linear-gradient(to top, #034a66, #ced11a) !important;    
+    }
+     
+    &-placeholder:nth-child(10n + 10) &__content {
+        background-image: linear-gradient(to top, #ec458d, #474ed7);    
+    } 
+     */
 }
 
 .card__description {
@@ -446,56 +490,8 @@ body {
   z-index: -1;
   -webkit-transition: all .3s;
   transition: all .3s;
-}
-
-.card-placeholder:nth-child(10n + 1) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#b429f9), to(#26c5f3));
-  background-image: linear-gradient(to top, #b429f9, #26c5f3);
-}
-
-.card-placeholder:nth-child(10n + 2) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#af1239), to(#cce269));
-  background-image: linear-gradient(to top, #af1239, #cce269);
-}
-
-.card-placeholder:nth-child(10n + 3) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#0b3866), to(#3ddab2));
-  background-image: linear-gradient(to top, #0b3866, #3ddab2);
-}
-
-.card-placeholder:nth-child(10n + 4) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#f40752), to(#7c65a9));
-  background-image: linear-gradient(to top, #f40752, #7c65a9);
-}
-
-.card-placeholder:nth-child(10n + 5) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#1c3b41), to(#69d449));
-  background-image: linear-gradient(to top, #1c3b41, #69d449);
-}
-
-.card-placeholder:nth-child(10n + 6) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#0a5df8), to(#ed2d53));
-  background-image: linear-gradient(to top, #0a5df8, #ed2d53);
-}
-
-.card-placeholder:nth-child(10n + 7) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#661069), to(#30d26e));
-  background-image: linear-gradient(to top, #661069, #30d26e);
-}
-
-.card-placeholder:nth-child(10n + 8) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#702b19), to(#cec360));
-  background-image: linear-gradient(to top, #702b19, #cec360);
-}
-
-.card-placeholder:nth-child(10n + 9) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#034a66), to(#ced11a)) !important;
-  background-image: linear-gradient(to top, #034a66, #ced11a) !important;
-}
-
-.card-placeholder:nth-child(10n + 10) .card__content {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#ec458d), to(#474ed7));
-  background-image: linear-gradient(to top, #ec458d, #474ed7);
+  background-image: repeating-linear-gradient(45deg, rgba(97, 97, 97, 0.1) 0px, rgba(97, 97, 97, 0.1) 2px, transparent 2px, transparent 4px), -webkit-gradient(linear, left top, right top, from(#2b2b2b), to(#2b2b2b));
+  background-image: repeating-linear-gradient(45deg, rgba(97, 97, 97, 0.1) 0px, rgba(97, 97, 97, 0.1) 2px, transparent 2px, transparent 4px), linear-gradient(90deg, #2b2b2b, #2b2b2b);
 }
 
 @media (min-width: 1024px) {

@@ -343,11 +343,16 @@ $tiempo-fade:0.5s;
         width: 100%;
         z-index: -1;
         transition: all .3s;
+
+
+        background-image: repeating-linear-gradient(45deg, rgba(97,97,97,0.1) 0px, rgba(97,97,97,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(43,43,43),rgb(43,43,43));  //mas apto para tienda hardware
     }
 
   /*  &:hover &__content {
         padding-top: 4em;
-    }*/
+
+
+    }*//*
       
     &-placeholder:nth-child(10n + 1) &__content { //rever
         background-image: linear-gradient(to top, #b429f9, #26c5f3);
@@ -388,7 +393,7 @@ $tiempo-fade:0.5s;
     &-placeholder:nth-child(10n + 10) &__content {
         background-image: linear-gradient(to top, #ec458d, #474ed7);    
     } 
-     
+     */
      
     @media (min-width: 1024px) {
         & {
