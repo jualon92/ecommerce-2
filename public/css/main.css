@@ -456,6 +456,8 @@ body {
 }
 
 .card__image {
+  background-size: 200px !important;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 200px;
   background-color: currentcolor;

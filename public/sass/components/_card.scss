@@ -304,6 +304,8 @@ $tiempo-fade:0.5s;
     }*/
 
     &__image {
+        background-size: 200px!important;
+    background-repeat: no-repeat;
         background-size: cover;
         height: 200px;
         background-color: currentcolor; // vector diferente a background de contenedor
