@@ -502,7 +502,7 @@ body {
 
 @media (min-width: 1280px) {
   .card {
-    min-width: 260px;
+    min-width: 240px;
   }
 }
 
