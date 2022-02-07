@@ -104,7 +104,7 @@ $tiempo-fade:0.5s;
       -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
     }
     70% {
-        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        -webkit-box-shadow: 0 0 0 15px rgba(204,169,44, 0);
     }
     100% {
         -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
@@ -116,8 +116,8 @@ $tiempo-fade:0.5s;
       box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
     }
     70% {
-        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        -moz-box-shadow: 0 0 0 15px rgba(204,169,44, 0);
+        box-shadow: 0 0 0 15px rgba(204,169,44, 0);
     }
     100% {
         -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
@@ -132,7 +132,7 @@ $tiempo-fade:0.5s;
  
 .carta-grande{
    box-shadow: 0 0 0 rgba(29, 29, 28, 0.4);
-  animation: pulse 2s infinite;
+   animation: pulse 2s infinite;
     -moz-transform: scale(1.06);
     -webkit-transform: scale(1.06);
     transform: scale(1.06);
