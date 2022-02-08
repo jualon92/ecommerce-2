@@ -143,19 +143,26 @@ class ProductoController extends ProductoModel {
             ref.innerHTML = "Guardar"
             let inputs = Array.from(ref.parentElement.parentElement.querySelectorAll("input")) //la idea es que si hay un mal caracter actualizar este gris
             console.log(inputs)
+
+            ////no anda
+            let lista = [true, true, true, true, true, true, true]    
             inputs.forEach((input, index) => { //validacion en actualizar
+                
                 input.addEventListener('input', () => { //input value has  changed
-                    //      console.log("hubo input")
-                    //      console.log(input.value)
-                    //      console.log(index)
-                    //       console.log(getRegex())
-
-
+                     //   console.log("hubo input")
+                     //    console.log(input.value)
+                     //  console.log(index)
+                     //    console.log(getRegex())
+                    
+                    console.log("cambio input")
                     let regex = this.getRegex()
-                    let lista = [true, true, true, true, true, true, true]
+                  //  let lista = [true, true, true, true, true, true, true]
                     lista[index] = validar(input.value, regex[index], index)
-                    ref.disabled = lista.some(ele => ele === false) //any */
-
+                    console.log("lista validacion " + lista)
+                    let hayInvalido = lista.some(ele => ele === false) 
+                    console.log("hay invalido:"  + hayInvalido)
+                    ref.disabled = hayInvalido//any */
+                    
 
                 })
             })
