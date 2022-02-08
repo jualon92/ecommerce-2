@@ -50,6 +50,9 @@ async function renderPago(preference) { // levantar archivo vistas/pago.html
     document.querySelector('.section-pago').innerHTML = ""  //vuelvo para atras, elimino html agregado
   });
 
+ 
+
+
   // Create preference when click on checkout button
   function createCheckoutButton(preferenceId) { //requiere preferenceId para func
     // Initialize the checkout
@@ -65,3 +68,4 @@ async function renderPago(preference) { // levantar archivo vistas/pago.html
   }
 }
 
+ 

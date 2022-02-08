@@ -164,9 +164,12 @@ class CarritoController extends CarritoModel {
         elemSectionCarrito.innerHTML = '<h2>Enviando carrito...</h2>'
         let preference = await carritoService.guardarCarritoService(this.carrito)
 
+        //reinicio del carrito
        this.carrito = [] // podria reiniciarse cuando se envia a mercadopago, luego del checkout.
         localStorage.setItem('carrito', this.carrito)
-        localStorage
+        document.querySelector(".fa-layers-counter").innerHTML = 0  
+        
+        
         elemSectionCarrito.innerHTML = '<h2>Enviando carrito... <b>OK!</b></h2>'
         //   console.log("timeout carrito")
         setTimeout(async () => {

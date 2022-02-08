@@ -128,9 +128,11 @@ class ProductoController extends ProductoModel {
                 else if (i == 5) { //grab src
                     let src = arrTargets[5].querySelector(".imagenAlta").src
                     console.log(src)
-                    targets[i].innerHTML = `<input type="text" id="fname" name="fname" value="${src}"><br><br>`
+                    targets[i].innerHTML = `<input type="text" id="fname" name="fname" value="${src}"  ><br><br>`
                 } else {
-                    targets[i].innerHTML = `<input type="text" id="fname" name="fname" value="${arrValoresTargets[i]}"><br><br>` //que al actualizar, aparezca valor inicial cargado para modificar
+                    targets[i].innerHTML = `<input type="text" id="fname" name="fname" value="${arrValoresTargets[i]}" style="
+                    width: 100%;
+                "><br><br>` //que al actualizar, aparezca valor inicial cargado para modificar
 
                 }
             }

@@ -565,7 +565,7 @@ body {
 }
 
 .contacto__titulo {
-  font-size: 2.5rem;
+  font-size: 40px;
 }
 
 .contacto ul {
@@ -1621,6 +1621,7 @@ input:focus::placeholder {
 }
 
 .alta-container {
+  margin-top: 20px;
   margin-left: 15px;
   margin-bottom: 50px;
 }
@@ -1633,9 +1634,11 @@ input:focus::placeholder {
   .form-alta {
     width: 40rem;
   }
-  .alta-container {
-    width: 500px;
-  }
+  /*
+    .alta-container{
+        width:500px;
+         
+    }*/
   .form-alta__input-datos {
     margin-left: 155px;
   }
@@ -1847,6 +1850,20 @@ table, th, td {
     50% { border-color: orange; }
   }
   */
+.primerSel {
+  height: 75px;
+  padding: 15px;
+}
+
+#listado-productos {
+  width: 50%;
+}
+
+.alta-titulo {
+  font-size: 40px;
+  margin-top: 15px;
+}
+
 .form-alta {
   border-radius: 5px;
   background-color: #f1f1f1;
