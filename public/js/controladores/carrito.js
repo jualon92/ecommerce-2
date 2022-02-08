@@ -20,17 +20,33 @@ class CarritoController extends CarritoModel {
     }
 
     getTotalCarrito() {
-        let arrItems = JSON.parse(localStorage.getItem('carrito'))
-        let acu = 0
-        if (arrItems.length) {
-            for (let i = 0; i < arrItems.length; i++)
-                // console.log(arrItems[i].cantidad)
-                acu = acu + parseInt(arrItems[i].cantidad)
-            //   console.log(acu)
-            return acu
-        } else { //si es primera vez que inicia servidor y carrito esta vacio arrItems es undefined
+        try {
+            let arrItems = JSON.parse(localStorage.getItem('carrito')) 
+            let acu = 0
+            if (arrItems.length) {
+                for (let i = 0; i < arrItems.length; i++)
+                    // console.log(arrItems[i].cantidad)
+                    acu = acu + parseInt(arrItems[i].cantidad)
+                //   console.log(acu)
+                return acu
+            } else { //rever, no necesario
+                return 0
+            }
+        } catch (error){
+            console.warn(error)
             return 0
         }
+        /*
+         let acu = 0
+         if (arrItems.length) {
+             for (let i = 0; i < arrItems.length; i++)
+                 // console.log(arrItems[i].cantidad)
+                 acu = acu + parseInt(arrItems[i].cantidad)
+             //   console.log(acu)
+             return acu
+         } else { //si es primera vez que inicia servidor y carrito esta vacio arrItems es undefined
+             return 0
+         }*/
 
     }
 
@@ -148,9 +164,9 @@ class CarritoController extends CarritoModel {
         elemSectionCarrito.innerHTML = '<h2>Enviando carrito...</h2>'
         let preference = await carritoService.guardarCarritoService(this.carrito)
 
-        this.carrito = []
+       this.carrito = [] // podria reiniciarse cuando se envia a mercadopago, luego del checkout.
         localStorage.setItem('carrito', this.carrito)
-
+        localStorage
         elemSectionCarrito.innerHTML = '<h2>Enviando carrito... <b>OK!</b></h2>'
         //   console.log("timeout carrito")
         setTimeout(async () => {
