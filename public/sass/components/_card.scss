@@ -402,15 +402,24 @@ $tiempo-fade:0.5s;
     } 
      */
      
-    @media (min-width: 1024px) {
+    @media (min-width: 1023px) {
         & {
             min-width: 280px;
         }
-    }
 
-    @media (min-width: 1280px) {
+         
+    }
+     
+
+    @media (min-width: 900px) and (max-width:1440px) {
         & {
             min-width: 240px;
+        }
+
+        .c2{
+            margin-left: 80%!important;
+            z-index:10!important;
+            top:140px!important;
         }
     }
 
@@ -479,4 +488,33 @@ $tiempo-fade:0.5s;
     .card__precio{
         margin-right: 25px !important; 
        }
+}
+
+
+.contenedor-prueba{
+    position: left;
+    display: inline-block;
+    margin-left: 80%;
+    z-index: 10;
+  // border: solid red;  //testeo
+    transform: translateY(-95px);
+}
+ 
+
+@media (min-width: 2500px){
+    .contenedor-prueba{
+        margin-left: 93%!important;}
+}
+
+@media (max-width: 1025px){
+    .contenedor-prueba{
+        margin-left: 75%!important;
+        width: 240px!important;
+        height: 50px!important;
+    }
+}
+
+@media (max-width: 425px){
+    .contenedor-prueba{
+        display:none;}
 }
