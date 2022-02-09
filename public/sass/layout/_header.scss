@@ -272,6 +272,15 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
     flex-direction: column-reverse;
   }
 
+
+  .card__envio{
+     
+   
+  }
+
+  .card__stock{
+    transform: translateY(-10px)!important;
+  }
   .search-bar{
     flex-wrap:wrap;
     justify-content: flex-end;

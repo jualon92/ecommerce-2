@@ -418,6 +418,10 @@ $tiempo-fade:0.5s;
         &{
             min-width: 280px;
         }
+        &__precio{
+            margin-right: 25px;
+            transform: translateY(-20px);
+        }
     }
 
     @media (min-width: 426px) and (max-width: 768px) {
@@ -436,6 +440,8 @@ $tiempo-fade:0.5s;
             top: 0;
             padding-left: 45%;
         }
+
+         
     }
 
      

@@ -507,6 +507,11 @@ body {
   .card {
     min-width: 280px;
   }
+  .card__precio {
+    margin-right: 25px;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
@@ -1064,6 +1069,10 @@ body {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+  .card__stock {
+    -webkit-transform: translateY(-10px) !important;
+            transform: translateY(-10px) !important;
   }
   .search-bar {
     -ms-flex-wrap: wrap;
@@ -1753,6 +1762,15 @@ input:focus::placeholder {
 
 .alta-titulo {
   font-size: 2.5rem;
+}
+
+
+
+@media (min-width: 768px) and (max-width:1023px) {
+    .card__envio{
+      margin-top:  0!important;
+     margin-left: 0!important;
+    }
 }
 
 @media (min-width: 768px) {
