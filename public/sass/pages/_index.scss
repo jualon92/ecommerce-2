@@ -6,7 +6,41 @@
      
 }
  
+.helping-hand{
+    margin-left: 92%;
+    background-color: #ff4f4f;
+    padding: 15px 25px 15px 25px;
+    border-radius: 6px;
+    text-align: center;
+    color: black;
+    font-weight: 300;
+    font-size: larger;
+     font-family: inherit;
+
+    position: absolute;
+    transform: translateX(-130px);
+    width: 300px;
+    height: 70px;
+    
+    animation: fadeOut 1.4s forwards 3s ;
+  
+}
+
  
+ 
+
+ 
+
+@keyframes fadeOut{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+
+@-webkit-keyframes fadeOut{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+
 
 .contenedor-btn-suma{
     position: absolute;
@@ -95,3 +129,91 @@
     }
 }
 
+
+.boton-ui:hover{
+	background-color: #C3C6D1;
+
+}
+
+.boton-ui:active{
+	box-shadow: 0 5px #293531;
+    transform: translateY(1.7px);
+}
+
+.boton-ui{
+    box-shadow: 0 5.2px 1px -1px #293531!important;
+    border-radius: 4px!important;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    padding: 13px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 5px;
+    margin-bottom: 14px;
+    margin: 0;
+    margin-left: 5px;
+    border-radius: 12px;
+    border-color: #293531;
+    border-width: 1.7px;
+}
+.form-alta__formulario .boton-ui {
+    box-shadow: 0 5.2px 1px -1px #293531;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 13px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 5px;
+    margin-bottom: 14px;
+    margin: 0;
+    margin-left: 5px;
+    border-radius: 12px;
+    border-color: #293531;
+    border-width: 1.7px;
+    
+}
+
+.form-alta__formulario .boton-ui:hover{
+	background-color: #C3C6D1;
+
+}
+
+.form-alta__formulario .boton-ui:active{
+	box-shadow: 0 5px #293531;
+    transform: translateY(1.7px);
+}
+
+
+.tabla-alta__boton{
+    -webkit-box-shadow: 0 5.2px 1px -1px #293531 !important;
+    box-shadow: 0 5.2px 1px -1px #293531 !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    padding: 13px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 5px;
+    margin-bottom: 14px;
+    width: 120px;
+    height: 50px;
+    margin-bottom: 5px;
+    margin: 10px;
+    margin-left: 5px;
+    border-radius: 12px;
+    border-color: #293531;
+    border-width: 1.7px;
+}
+
+.tabla-alta__boton:hover{
+    background-color: #C3C6D1;
+}
+
+.tabla-alta__boton:active{
+    box-shadow: 0 5px #293531;
+    transform: translateY(1.7px);
+}

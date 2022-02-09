@@ -119,15 +119,6 @@ body {
 
 /* Internet Explorer */
 
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -153,6 +144,10 @@ body {
 
 .contenedor-btn-suma {
   margin-top: 16px;
+}
+
+.card__btn-comprar:active + .helping-hand {
+  -webkit-animation-name: none !important;
 }
 
 .card-placeholder:hover .card__btn-comprar {
@@ -1531,6 +1526,43 @@ input:focus::placeholder {
   padding: 1em;
 }
 
+.helping-hand {
+  margin-left: 92%;
+  background-color: #ff4f4f;
+  padding: 15px 25px 15px 25px;
+  border-radius: 6px;
+  text-align: center;
+  color: black;
+  font-weight: 300;
+  font-size: larger;
+  font-family: inherit;
+  position: absolute;
+  -webkit-transform: translateX(-130px);
+          transform: translateX(-130px);
+  width: 300px;
+  height: 70px;
+  -webkit-animation: fadeOut 1.4s forwards 3s;
+          animation: fadeOut 1.4s forwards 3s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .contenedor-btn-suma {
   position: absolute;
   bottom: 40px;
@@ -1620,6 +1652,99 @@ input:focus::placeholder {
   }
 }
 
+.boton-ui:hover {
+  background-color: #C3C6D1;
+}
+
+.boton-ui:active {
+  -webkit-box-shadow: 0 5px #293531;
+          box-shadow: 0 5px #293531;
+  -webkit-transform: translateY(1.7px);
+          transform: translateY(1.7px);
+}
+
+.boton-ui {
+  -webkit-box-shadow: 0 5.2px 1px -1px #293531 !important;
+          box-shadow: 0 5.2px 1px -1px #293531 !important;
+  border-radius: 4px !important;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  padding: 13px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  margin: 0;
+  margin-left: 5px;
+  border-radius: 12px;
+  border-color: #293531;
+  border-width: 1.7px;
+}
+
+.form-alta__formulario .boton-ui {
+  -webkit-box-shadow: 0 5.2px 1px -1px #293531;
+          box-shadow: 0 5.2px 1px -1px #293531;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 13px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  margin: 0;
+  margin-left: 5px;
+  border-radius: 12px;
+  border-color: #293531;
+  border-width: 1.7px;
+}
+
+.form-alta__formulario .boton-ui:hover {
+  background-color: #C3C6D1;
+}
+
+.form-alta__formulario .boton-ui:active {
+  -webkit-box-shadow: 0 5px #293531;
+          box-shadow: 0 5px #293531;
+  -webkit-transform: translateY(1.7px);
+          transform: translateY(1.7px);
+}
+
+.tabla-alta__boton {
+  -webkit-box-shadow: 0 5.2px 1px -1px #293531 !important;
+  box-shadow: 0 5.2px 1px -1px #293531 !important;
+  border-radius: 4px !important;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  padding: 13px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  width: 120px;
+  height: 50px;
+  margin-bottom: 5px;
+  margin: 10px;
+  margin-left: 5px;
+  border-radius: 12px;
+  border-color: #293531;
+  border-width: 1.7px;
+}
+
+.tabla-alta__boton:hover {
+  background-color: #C3C6D1;
+}
+
+.tabla-alta__boton:active {
+  -webkit-box-shadow: 0 5px #293531;
+          box-shadow: 0 5px #293531;
+  -webkit-transform: translateY(1.7px);
+          transform: translateY(1.7px);
+}
+
 .alta-container {
   margin-top: 20px;
   margin-left: 15px;
@@ -1707,6 +1832,8 @@ table, th, td {
   gap: 42px;
   margin-top: 6rem;
   margin-bottom: 6rem;
+  -o-border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+     border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
 }
 
 .presentacion {
@@ -1853,6 +1980,10 @@ table, th, td {
 .primerSel {
   height: 75px;
   padding: 15px;
+}
+
+.alta-container {
+  font-size: 1.1rem;
 }
 
 #listado-productos {

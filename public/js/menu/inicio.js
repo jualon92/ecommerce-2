@@ -20,7 +20,7 @@ function despertarBotonCant(ele) {
     btnSust.addEventListener("click", function (ev) {
         ev.preventDefault()
         if (contadorDisplay <= 1) {
-            display.innerHTML = 0;
+            display.innerHTML = 1;
         } else {
             contadorDisplay = contadorDisplay - 1
             display.innerHTML = contadorDisplay;
@@ -36,7 +36,48 @@ function despertarBotonesCant(cartasPlaceholders) {
     cartasPlaceholders.forEach(despertarBotonCant)
 }
 
+function despertarHoverCartas(){ //agrega listeners a cartas luego de  utilizar te mplate handlebars
 
+
+    let arrCartas = document.querySelectorAll(".card")
+    for (let i = 0; i< arrCartas.length; i++) {
+        document.querySelectorAll(".card")[i].addEventListener("mouseover", e => {
+            document.querySelectorAll(".card")[i].classList.add("carta-grande")
+            document.querySelectorAll(".card__linea")[i].classList.add("dibujar-linea")
+
+   //         console.log("agregada clase a a carta")
+    
+        } )
+        document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseover", e => {
+            console.log("agrando")
+            document.querySelectorAll(".card")[i].classList.add("carta-grande")
+            console.log("mantengo linea")
+            document.querySelectorAll(".card__linea")[i].classList.add("dibujar-linea")
+     //       console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
+        } )
+    
+    
+        //exit
+        document.querySelectorAll(".card")[i].addEventListener("mouseout", e => {
+            document.querySelectorAll(".card")[i].classList.remove("carta-grande")
+            console.log("fuera de carta")
+          document.querySelectorAll(".card__linea")[i].classList.remove("dibujar-linea")
+      //      console.log("agregada clase a a carta")
+    
+        } )
+    
+    
+        document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseout", e => {
+            document.querySelectorAll(".card")[i].classList.remove("carta-grande")
+            console.log("quito linea")
+            document.querySelectorAll(".card__linea")[i].classList.remove("dibujar-linea")
+       //     console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
+        } )
+
+
+        
+    }
+}
 
 async function renderPlantillaListado(listado) { //paso como parametro lista filtrada al detectar busqueda
 
@@ -52,7 +93,9 @@ async function renderPlantillaListado(listado) { //paso como parametro lista fil
     let html = template({ listado })
     document.getElementsByClassName('cards-container')[0].innerHTML = html
     despertarBotonesCant(document.querySelectorAll(".card-placeholder"))
-
+    despertarHoverCartas()
+ 
+   
 }
 
 
@@ -66,6 +109,7 @@ function agregarCarrito(e, id, ref) { //
     let contadorDisplay = ref.parentNode.parentNode.querySelector(".internal-clock").innerHTML
     console.log(contadorDisplay) // rever mejor manera
 
+    
     //ref.classList.toggle('card--seleccionada')/
     let producto = productoController.productos.find(producto => producto.id == id) // que producto es
    
@@ -102,7 +146,6 @@ async function initInicio() {
         ev.preventDefault()
         const contenidoABuscar = document.querySelector(".search-bar__form-search").value.toUpperCase()
         console.log("valor ingresado: " + contenidoABuscar)
-        console.log("hola")
         console.log(productos)
         if (contenidoABuscar){  //busqueda vacia 
             
@@ -114,50 +157,10 @@ async function initInicio() {
         }else{ //nada en la barra de busqueda, o la barra de busqueda contenido fue borrado, muestra todo de nuevo
              renderPlantillaListado(productos)
 
-        }
-
-         
+        }   
 
     })
-    //hover - refactor
-    let arrCartas = document.querySelectorAll(".card")
-    for (let i = 0; i< arrCartas.length; i++) {
-        document.querySelectorAll(".card")[i].addEventListener("mouseover", e => {
-            document.querySelectorAll(".card")[i].classList.add("carta-grande")
-            document.querySelectorAll(".card__linea")[i].classList.add("dibujar-linea")
-
-   //         console.log("agregada clase a a carta")
-    
-        } )
-        document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseover", e => {
-            console.log("agrando")
-            document.querySelectorAll(".card")[i].classList.add("carta-grande")
-            console.log("mantengo linea")
-            document.querySelectorAll(".card__linea")[i].classList.add("dibujar-linea")
-     //       console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
-        } )
-    
-    
-        //exit
-        document.querySelectorAll(".card")[i].addEventListener("mouseout", e => {
-            document.querySelectorAll(".card")[i].classList.remove("carta-grande")
-            console.log("fuera de carta")
-          document.querySelectorAll(".card__linea")[i].classList.remove("dibujar-linea")
-      //      console.log("agregada clase a a carta")
-    
-        } )
-    
-    
-        document.querySelectorAll(".card__btn-comprar")[i].addEventListener("mouseout", e => {
-            document.querySelectorAll(".card")[i].classList.remove("carta-grande")
-            console.log("quito linea")
-            document.querySelectorAll(".card__linea")[i].classList.remove("dibujar-linea")
-       //     console.log("agregado carta grande a  " +   document.querySelectorAll(".card__btn-comprar")[i]) 
-        } )
-
-         
-        
-    }
+     
 
     
 

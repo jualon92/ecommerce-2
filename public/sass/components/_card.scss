@@ -43,6 +43,10 @@ $tiempo-fade:0.5s;
 .contenedor-btn-suma{
     margin-top:16px;
 }
+
+.card__btn-comprar:active + .helping-hand{
+    -webkit-animation-name:none!important;
+}
 .card-placeholder:hover .card__btn-comprar{  
     visibility: visible;
     opacity:1;

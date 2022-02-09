@@ -21,7 +21,7 @@ class CarritoController extends CarritoModel {
 
     getTotalCarrito() {
         try {
-            let arrItems = JSON.parse(localStorage.getItem('carrito')) 
+            let arrItems = JSON.parse(localStorage.getItem('carrito'))
             let acu = 0
             if (arrItems.length) {
                 for (let i = 0; i < arrItems.length; i++)
@@ -32,7 +32,7 @@ class CarritoController extends CarritoModel {
             } else { //rever, no necesario
                 return 0
             }
-        } catch (error){
+        } catch (error) {
             console.warn(error)
             return 0
         }
@@ -101,12 +101,25 @@ class CarritoController extends CarritoModel {
         localStorage.setItem('carrito', JSON.stringify(this.carrito)) //guardado local
         document.querySelector(".fa-layers-counter").innerHTML =   parseInt(carritoController.getTotalCarrito())
     }*/
+    getVeces = (contador) => contador == 1 ? "vez" : "veces"
 
     agregarAlCarritoSuma(producto, contador) { // if contador == null usar 1 , else usar contador . Utilizado en sumar al carrito con numero
         //console.log(producto)
+        let ele = document.createElement("div") //creo ele html porque quiero que cada uno tenga su propio fade out, animacion.  instanciar objetos desde clase 
+        ele.classList.add("helping-hand")
+
+        document.querySelector(".contenedor-prueba").appendChild(ele)
+  
+
         if (!this.elProductoEstaEnElCarrito(producto)) { // primer prod
             producto.cantidad = contador
             this.carrito.push(producto)
+            //      let mensajeHelper = `agregado al carrito ${producto.nombre}  ${contador} ${contador == 1 ? "vez" : "veces"}`    // refactor, repite logica
+
+
+            let texto = document.createTextNode(`agregado al carrito  ${contador} ${producto.nombre}`);
+            ele.appendChild(texto)
+
         }
         else {
 
@@ -120,16 +133,34 @@ class CarritoController extends CarritoModel {
             console.log("productos finales" + suma)
             let resta = suma - parseInt(productoDeCarrito.cantidad)
             //  let total = parseInt(productoDeCarrito.cantidad) + suma
+
+
             if (suma > parseInt(productoDeCarrito.stock)) { //si la suma es mayor al maximo, cantidad es el maximo
                 productoDeCarrito.cantidad = productoDeCarrito.stock
                 console.log("limite")
                 console.log("total", suma)
+                //    document.querySelector(".helping-hand").innerHTML = "limite de stock alcanzado" 
+                let texto = document.createTextNode(`sin suficiente stock`);
+                ele.appendChild(texto)
+
 
             } else {
                 productoDeCarrito.cantidad = suma
                 console.log("productos finales = " + suma)
                 console.log("diferencia " + resta)
                 console.log("agregado al carrito n prod mas: " + contador)
+                //helping hand
+                // let mensajeHelper = `agregado al carrito ${productoDeCarrito.nombre}  ${contador} ${contador == 1 ? "vez" : "veces"}  : `
+                //      console.log(mensajeHelper)
+                //     document.querySelector(".helping-hand").classList.add("aparecer") //aparece
+                //    document.querySelector(".helping-hand").classList.remove("aparecer") //aparece
+
+                //document.querySelector(".helping-hand").innerHTML = `agregado al carrito  ${contador} ${productoDeCarrito.nombre}`
+                let texto = document.createTextNode(`agregado al carrito  ${contador} ${productoDeCarrito.nombre}`);
+                ele.appendChild(texto)
+                document.querySelector(".contenedor-prueba").appendChild(ele)
+                //          document.querySelector(".helping-hand").classList.add("aparecer") //aparece
+
             }
         }
 
@@ -166,13 +197,13 @@ class CarritoController extends CarritoModel {
 
         //reinicio del carrito
 
-       this.carrito = [] // podria reiniciarse aguas arriba. ej: if (mpago.saleSucessful) reiniciar else nada
-        
-       localStorage.setItem('carrito', this.carrito)
-        document.querySelector(".fa-layers-counter").innerHTML = 0  
-       
-         
-      
+        this.carrito = [] // podria reiniciarse aguas arriba. ej: if (mpago.saleSucessful) reiniciar else nada
+
+        localStorage.setItem('carrito', this.carrito)
+        document.querySelector(".fa-layers-counter").innerHTML = 0
+
+
+
 
         elemSectionCarrito.innerHTML = '<h2>Enviando carrito... <b>OK!</b></h2>'
         //   console.log("timeout carrito")

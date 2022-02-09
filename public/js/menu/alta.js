@@ -48,7 +48,17 @@ class FormularioAlta {
             console.log("limpiando")
 
             if (guardarProducto) guardarProducto(producto) // guarda en api y renderiza, mejor serian dos funciones, rever
+
+            let ele = document.createElement("div") // buen candidato para clase
+            ele.classList.add("helping-hand")
+    
+            document.querySelector("main").appendChild(ele)
+            let texto = document.createTextNode(`${producto.nombre} guardado con exito!`);
+            ele.appendChild(texto)
+            ele.style.bottom = "79%"
+
             //   console.log("cargo exitosa")
+
         })
          
         this.dropArea = document.getElementById("droparea")
