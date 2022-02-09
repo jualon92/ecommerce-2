@@ -414,6 +414,15 @@ $tiempo-fade:0.5s;
         }
     }
 
+    @media (max-width:321px){
+        &{
+            min-width: 240px!important;
+        }
+        &__precio{
+            margin-right: 15px;
+            transform: translateY(-20px);
+        }
+    }
     @media (max-width:425px){
         &{
             min-width: 280px;
@@ -440,7 +449,14 @@ $tiempo-fade:0.5s;
             top: 0;
             padding-left: 45%;
         }
+        &__envio{
+            margin-top:0!important;
+        }
 
+        &__precio{
+            margin-right: -1px!important;
+            align-self: flex-end!important;
+        }
          
     }
 
@@ -456,4 +472,11 @@ $tiempo-fade:0.5s;
         scroll-behavior: auto !important;
         transition-delay: 0ms !important;
     }
+}
+
+
+@media (min-width: 769px) and (max-width: 1400px){
+    .card__precio{
+        margin-right: 25px !important; 
+       }
 }

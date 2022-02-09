@@ -214,10 +214,12 @@ input:focus::placeholder {
 
     .card__stock{
         align-self: flex-end;
+        position: absolute;
+        bottom: 20%;
     }
 
     .contenedor-btn-suma{
-        bottom: 110px!important;
+        bottom: 105px!important;
         left:45%!important;
     }
 
@@ -312,7 +314,7 @@ input:focus::placeholder {
     }
 
     .card__precio{
-        margin-right: 16px!important;
+        margin-right: 16px;
       //  transform: translateY(-9px)!important;
     }
 
