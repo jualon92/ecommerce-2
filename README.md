@@ -10,8 +10,9 @@ Conceptos que se busco aplicar:
 - Single Page Application 
 - diseño responsive 
 - con carrito y procesamiento de pago, y permanencia de las cartas en backend mongoDB.
-
--  la posibilidad de generar nuevas cartas de productos y que alla validacion de datos tanto desde el front como el back.
+-  la posibilidad de generar nuevas cartas de productos 
+-  que se utilize validacion de input tanto desde el front como el back.
+-  diseño Modelo-Vista-Controlador
 
 
 
