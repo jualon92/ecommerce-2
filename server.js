@@ -13,7 +13,7 @@ import compression from "compression"
 Mongo_DB.conectarDB() 
 
 const app = express()
-
+app.use(compression());
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
@@ -23,7 +23,7 @@ app.use('/api/carritos', routerCarrito)
 app.use('/upload', routerUpload)
 
  
-app.use(compression());
+ 
 
 //console.log(process.env.PUBLIC)
 //// 
