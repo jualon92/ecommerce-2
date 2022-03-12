@@ -4,7 +4,7 @@ import routerCarrito from './router/carrito.js'
 import routerUpload from './router/upload.js'
 import config from './config.js'
 import Mongo_DB from './model/DB_mongo.js'
-
+import compression from "compression"
 //import ProductoModelMongoDB from './model/productos-mongodb.js'
 //ProductoModelMongoDB.conectarDB()
 
@@ -22,6 +22,8 @@ app.use('/api/productos', routerProductos)
 app.use('/api/carritos', routerCarrito)
 app.use('/upload', routerUpload)
 
+ 
+app.use(compression());
 
 //console.log(process.env.PUBLIC)
 //// 
