@@ -43,6 +43,21 @@
         height: 35px;
         font-size: 1.1em;
         font-weight: bold;
+    } 
+     
+    &--visible{
+       
     }
 
 }
+
+.section-carrito--visible{
+    @media (max-width:480px){
+        display:flex;
+        flex-wrap:wrap-reverse;
+    //    background-color: red;
+        position: static;
+    }
+    
+}
+

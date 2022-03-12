@@ -90,7 +90,7 @@ async function renderPlantillaListado(listado) { //paso como parametro lista fil
         let b = 0
         return b
     });
-    let html = template({ listado })
+    let html = template({ listado }) 
     document.getElementsByClassName('cards-container')[0].innerHTML = html
     despertarBotonesCant(document.querySelectorAll(".card-placeholder"))
     despertarHoverCartas()

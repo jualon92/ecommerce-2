@@ -1,47 +1,45 @@
- 
 //colores
-$rosado:deeppink; 
+$rosado: deeppink;
 //$violeta:purple;
-$rojo-apagado:hsl(0, 100%, 70%);  
-$gris-frio:#515E63;
-$amarillo-vainilla:hsl(34, 99%, 70%);
-$gris-oscuro:hsl(0, 0%, 24%);
+$rojo-apagado: hsl(0, 100%, 70%);
+$gris-frio: #515e63;
+$amarillo-vainilla: hsl(34, 99%, 70%);
+$gris-oscuro: hsl(0, 0%, 24%);
 
 $natura-colores: (
-  'color-header':#515E63, 
- // 'color-headerbg': #515E63,
- 'color-headerbg': #515E63,
-  'searchbar-primary': #C9D8B6,
-  'color-buscar': #F1ECC3,
+  "color-header": #515e63,
+  // 'color-headerbg': #515E63,
+  "color-headerbg": #515e63,
+  "searchbar-primary": #c9d8b6,
+  "color-buscar": #f1ecc3,
 );
- 
+
 $naranja-gris: (
-  'color-header':hsl(16, 100%, 50%),
-  'color-headerbg':hsl(16, 100%, 30%),
-  'searchbar-primary':hsl(197, 10%, 65%),
-  'color-buscar':hsl(197, 10%, 55%),
+  "color-header": hsl(16, 100%, 50%),
+  "color-headerbg": hsl(16, 100%, 30%),
+  "searchbar-primary": hsl(197, 10%, 65%),
+  "color-buscar": hsl(197, 10%, 55%),
 );
- 
+
 $mapa-gris: (
-  'color-header':white,
+  "color-header": white,
   //'color-headerbg':$gris-nublado,
-  'color-headerbg':#282A35,
-  'searchbar-primary':hsl(195, 8%, 53%),
-  'color-buscar':hsl(197, 10%, 55%),
+  "color-headerbg": #282a35,
+  "searchbar-primary": hsl(195, 8%, 53%),
+  "color-buscar": hsl(197, 10%, 55%),
 );
 
-
-//me gusta la idea de poder cambiar de paletas ya declaradas en mapas (key:elemento, value:color) 
-@function get-color($key) { //toma "color-header", busca su color en el mapa guardada en var $paleta-seleccion,y devuelve key color
+//me gusta la idea de poder cambiar de paletas ya declaradas en mapas (key:elemento, value:color)
+@function get-color($key) {
+  //toma "color-header", busca su color en el mapa guardada en var $paleta-seleccion,y devuelve key color
   @return map-get($paleta-seleccion, $key);
- 
-} 
+}
 
 //// con cambiar paleta seleccion basta
 $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas facil cambiar entre paletas
- 
- 
-.main-header {/*flex permite reacomodar flow al bajar resolucion mediante media */
+
+.main-header {
+  /*flex permite reacomodar flow al bajar resolucion mediante media */
   display: flex;
   flex-direction: column;
 }
@@ -52,49 +50,50 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
 
 #menu:checked + .nav-bar {
   display: block;
-} 
+}
 
 #menu:checked ~ .search-bar .menu-toggle__label {
   background-color: yellow;
 }
 
-.main-header{ /* sticky header*/
- //  position:sticky;
-   top:0;
-   z-index:3; 
+.main-header {
+  /* sticky header*/
+  //  position:sticky;
+  top: 0;
+  z-index: 3;
 }
-
 
 /*********************************
               NAV BAR
   *********************************/
 .nav-bar {
-
-   // background-color: $color-headerbg;
-     background-color: get-color("color-headerbg"); 
-   //  background-color: #2C2C35;
-  &__nav-list { /*con flex requiere menos codigo*/
+  // background-color: $color-headerbg;
+  background-color: get-color("color-headerbg");
+  //  background-color: #2C2C35;
+  &__nav-list {
+    /*con flex requiere menos codigo*/
     display: flex;
     list-style-type: none;
     justify-content: center;
-     
   }
 
-  
-
-  &__nav-link { /*inline no muestra padding top padding bottom*/
+  &__nav-link {
+    /*inline no muestra padding top padding bottom*/
     display: block;
     padding: 1em 2em;
     text-decoration: none;
-    color:get-color("color-header");
+    color: get-color("color-header");
 
-    &.active{ //chain selectors
-   //   background-color: #04AA6D!important;  //bajo contraste
-   background-color: #04AA6D !important;
+    &.active {
+      //chain selectors
+      //   background-color: #04AA6D!important;  //bajo contraste
+      background-color: #04aa6d !important;
     }
   }
 
-  &__nav-link:hover, &__nav-link:focus{   //que marque cual elijo  
+  &__nav-link:hover,
+  &__nav-link:focus {
+    //que marque cual elijo
     background-color: #888888;
   }
 }
@@ -104,46 +103,49 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
   *********************************/
 .search-bar {
   //$color-casero: white; /*mas facil de cambiar, scope local, preguntar*/
-  background-color: get-color('searchbar-primary');
-   
+  background-color: get-color("searchbar-primary");
+ // padding: 0.5em;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
+  padding: 0.5em;
+  &__icon-search {
+    font-size: 20px;
+  }
+
    
-  &__icon-search{
-    font-size:20px;
-  }
-
-
-  &__logo-container,
   &__form-container {
-    padding: 0.65em;
+    //padding: 0.65em;
+    align-self: center;
   }
 
-  &__logo-img{
-    width: 60px;
+  &__logo-img {
+   // width: 60px;
+  // max-height: 60px;
   }
+  /*
   &__logo-container {
-  //  background-color: $searchbar-primary;
-    padding:em(5); 
-  }
+    //  background-color: $searchbar-primary;
+    padding: em(5);
+  }*/
 
   &__form-container {
-  //  background-color: $searchbar-primary;
-    flex-basis: 100%;
+    //  background-color: $searchbar-primary;
+    // flex-basis: 100%;
+    flex-basis: 60%;
     display: flex;
     justify-content: center;
+    height: 58px;
   }
 
   &__form-label {
     background-color: get-color("color-buscar");
     padding-right: 0.4rem; // no quede msj pegado a busq
-    
   }
 
   &__form-search {
-    background-color:white;
+    background-color: white;
     width: 90%;
-     
+
     /*
     &:hover, &:focus{  
         background-color:hsl(328, 100%, 30%);
@@ -151,72 +153,77 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
   }
 
   &__form-submit {
-   // background-color: darkslategray;
-  // background-color: #65BCEF;
-  background-color:$amarillo-vainilla;
-    margin-left:-40px; // opuesto a margin 40px(mueve a izq en vez de der), para quedar en el padding de barra busqueda
-    width:42px;
-    border-radius:3px;
+    // background-color: darkslategray;
+    // background-color: #65BCEF;
+    background-color: $amarillo-vainilla;
+    margin-left: -40px; // opuesto a margin 40px(mueve a izq en vez de der), para quedar en el padding de barra busqueda
+    width: 42px;
+    border-radius: 3px;
     z-index: 12; // lupa on top
-    border-style:solid;
-   //  border-left-color: transparent;
-    border-top-color:black;
-   &:hover{ //rever nesting
-    background-color:#F3A847;
-     
-   }
-
+    border-style: solid;
+    //  border-left-color: transparent;
+    border-top-color: black;
+    &:hover {
+      //rever nesting
+      background-color: #f3a847;
+    }
   }
 
   &__carrito-container {
-    display:flex;
-      flex: 0 0 5em;
-  //    background-color: $searchbar-primary;
-      align-items:center; // eje y centrado
+    display: flex;
+    align-items: center;
+  /*  display: flex;
+    flex: 0 0 5em;
+    //    background-color: $searchbar-primary;
+    align-items: center; // eje y centrado */
   }
 
-  &__carrito-img{
-        margin-left:0.1rem;
-        margin-top:0.5rem;
-       max-width:100%; 
-       font-size:2.2rem;
-       color:white;
+  &__carrito-img {
+    margin-left: 0.1rem;
+    margin-top: 0.5rem;
+    max-width: 100%;
+    font-size: 2.2rem;
+    color: white;
   }
 
-  &__search-bar__carrito-link{
-      display:flex;
+  &__search-bar__carrito-link {
+    display: flex;
   }
 }
 
-.fa-layers-counter{
+ 
+
+.fa-layers-counter {
   border-radius: 3px;
-  padding:2px;
+  padding: 2px;
   top: -10px;
-    left: -5px;
-    position: relative;
+  left: -5px;
+  position: relative;
 }
-.search-bar__form-search{ /* prefiero que no este nesteado en .search-bar*/
-   
-   padding:5px 0 5px 10px; // 
+.search-bar__form-search {
+  /* prefiero que no este nesteado en .search-bar*/
+
+  padding: 5px 0 5px 10px; //
   // margin-left:  40px;
-    
-   border-radius:5px;
-    
-   //border-left-color:transparent;
 
-    &:focus{
-       filter:brightness(60%); /*si se cambia el color de barra busqueda, brigthness lo cambia*/
-    }
+  border-radius: 5px;
 
-    &:hover{ /*rever*/
-         
-        border-style:solid;
-        border-color: #316282;
-    }
-    &::placeholder{
-       // font-family:Verdana, Geneva, Tahoma, sans-serif;
-        color:hsl(0, 0%, 20%);
-    }
+  //border-left-color:transparent;
+
+  &:focus {
+    filter: brightness(60%); /*si se cambia el color de barra busqueda, brigthness lo cambia*/
+  }
+
+  &:hover {
+    /*rever*/
+
+    border-style: solid;
+    border-color: #316282;
+  }
+  &::placeholder {
+    // font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: hsl(0, 0%, 20%);
+  }
 }
 
 /*********************************
@@ -232,7 +239,7 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
   &__label {
     display: block;
     background-color: black;
-    &:hover{
+    &:hover {
       background-color: #8a8061;
     }
     width: 100%;
@@ -251,12 +258,12 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
     margin: 0 auto;
   }
 
-  &__pan-arriba &__pan-abajo{
+  &__pan-arriba &__pan-abajo {
     top: 0.8em;
   }
 
-  &__pan-arriba{
-    top:12px;
+  &__pan-arriba {
+    top: 12px;
   }
   &__medallon {
     top: 50%;
@@ -267,34 +274,33 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
     bottom: 0.8em;
   }
 }
-@media (max-width: 768px) { /* hasta max 768px hace esto, celulares, tablets*/
+@media (max-width: 768px) {
+  /* hasta max 768px hace esto, celulares, tablets*/
   .main-header {
     flex-direction: column-reverse;
   }
 
-
-  .card__envio{
-     
    
+  .card__envio {
   }
 
-  .card__stock{
-    transform: translateY(-10px)!important;
+  .card__stock {
+    transform: translateY(-10px) !important;
   }
-  .search-bar{
-    flex-wrap:wrap;
+  .search-bar {
+    flex-wrap: wrap;
     justify-content: flex-end;
-    
-    &__logo-container{
+
+    &__logo-container {
       margin-right: auto;
     }
-    
-    &__form-submit{
-      margin-left:-6px; //3px 
+
+    &__form-submit {
+      margin-left: -6px; //3px
     }
 
-    &__form-container{
-      order:3;
+    &__form-container {
+      order: 3;
     }
   }
 
@@ -307,25 +313,22 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
 
     &__nav-list {
       flex-direction: column;
-    } 
+    }
   }
 
-  .search-bar__carrito-container:hover + .tiptext { /*rever, seria mejor delegarlo a js*/
-    display:block;
-    left:80%;
-    top:50px;
-   }
+  
 }
-
-
-.section-cards__header{ /*rever ubicacion sass*/
-    padding-bottom: 10px; /*no se superponga la carta*/
+ 
+ 
+.section-cards__header {
+  /*rever ubicacion sass*/
+  padding-bottom: 10px; /*no se superponga la carta*/
 }
 
 /*********************************
         tooltips
   *********************************/
- 
+
 /*
 .tipflow{
     display:flex;
@@ -352,44 +355,49 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
 }
 */
 
-.tiptext{
-    position:absolute; // podria hacerse con flex y quedaria mejor
-    top:100px;
-    left:92.5%;
-    display:none; // o color:transparent, color:black
-     
-    border-style:solid; // candidato herencia
-    border-top:solid #333;
-    border-left-color:#333;
-    border-bottom:none white;
-    border-right:none white;
-    background-color: white;
-    border-width: 1.5px;
-    padding:2.5px 5px 2.5px;
+.tiptext {
+  position: absolute; // podria hacerse con flex y quedaria mejor
+  top: 100px;
+  left: 92.5%;
+  display: none; // o color:transparent, color:black
 
+  border-style: solid; // candidato herencia
+  border-top: solid #333;
+  border-left-color: #333;
+  border-bottom: none white;
+  border-right: none white;
+  background-color: white;
+  border-width: 1.5px;
+  padding: 2.5px 5px 2.5px;
+  top: 120px;
 }
-
-
 
 //selecciona elem con clase .tiptext solo si .tiptext le sigue inmediatamente  a carrito-container, en hover.
 //si fuera sin +, no habria matching
-.search-bar__carrito-container:hover + .tiptext { /*rever, seria mejor delegarlo a js*/
-    display:block;
+ 
+
+@media (prefers-color-scheme: dark) {
+  .search-bar__form-submit i {
+    color: white;
+  }
+
+  .menu-toggle__label {
+    background-color: grey;
+  }
+
+  .search-bar__carrito-img {
+    color: hsl(0, 0%, 76%);
+  }
 }
 
-@media (prefers-color-scheme: dark){ 
-    .search-bar__form-submit i{
-      color:white;  
-    }
-
-    .menu-toggle__label{
-      background-color: grey;
-    }
-
-    .search-bar__carrito-img{
-      color: hsl(0, 0%, 76%);
-    }
-
+@media (min-width: 600px) {
+  .search-bar__carrito-container:hover + .tiptext {
+    /*rever, seria mejor delegarlo a js*/
+    display: block!important;
+     
+  
     
+  }
+
 }
-   
+ 
