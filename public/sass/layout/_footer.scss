@@ -289,6 +289,8 @@ input:focus::placeholder {
         margin-top:0;
     }
 
+    .menu-toggle{    display: none;
+    }
     .footer-box__ayuda {
         width: 203px;
     }
@@ -322,8 +324,8 @@ input:focus::placeholder {
         transform: translateY(-5px);
     }
     .footer-box{
-        margin-right:6%;
-        margin-left:6%;
+        margin-right:4%;
+        margin-left:4%;
 
         &__titulo{
             font-size:1.3rem;

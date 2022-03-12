@@ -52,9 +52,11 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
   display: block;
 }
 
-#menu:checked ~ .search-bar .menu-toggle__label {
-  background-color: yellow;
-}
+ 
+ 
+#menu:hover~ .search-bar .menu-toggle__label{
+   color:white;
+} 
 
 .main-header {
   /* sticky header*/
@@ -90,7 +92,7 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
       background-color: #04aa6d !important;
     }
   }
-
+  
   &__nav-link:hover,
   &__nav-link:focus {
     //que marque cual elijo
@@ -157,7 +159,7 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
     // background-color: #65BCEF;
     background-color: $amarillo-vainilla;
     margin-left: -40px; // opuesto a margin 40px(mueve a izq en vez de der), para quedar en el padding de barra busqueda
-    width: 42px;
+    width: 48px;
     border-radius: 3px;
     z-index: 12; // lupa on top
     border-style: solid;
@@ -229,19 +231,21 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
 /*********************************
               MENU TOGGLE
   *********************************/
-.menu-toggle {
+
+ 
+  .menu-toggle {
+
   display: none;
-  background-color: red;
+ // background-color: red;
   flex: 0 0 3em;
   position: relative;
   cursor: pointer;
 
+  
   &__label {
     display: block;
-    background-color: black;
-    &:hover {
-      background-color: #8a8061;
-    }
+  //  background-color: black;
+    
     width: 100%;
     height: 100%;
   }
@@ -256,6 +260,8 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
     left: 0.5em;
     right: 0.5em;
     margin: 0 auto;
+
+    
   }
 
   &__pan-arriba &__pan-abajo {
@@ -274,6 +280,7 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
     bottom: 0.8em;
   }
 }
+ 
 @media (max-width: 768px) {
   /* hasta max 768px hace esto, celulares, tablets*/
   .main-header {
@@ -288,26 +295,36 @@ $paleta-seleccion: $mapa-gris; //guarda el mapa a utilizar por get-color,mas fac
     transform: translateY(-10px) !important;
   }
   .search-bar {
+    row-gap: 15px;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap:30px;
 
+    &__carrito-container{
+      order:2;
+    }
     &__logo-container {
-      margin-right: auto;
+     // margin-right: auto;
+      order:3;
     }
 
     &__form-submit {
-      margin-left: -6px; //3px
+   //   margin-left: -6px; //3px
     }
-
+ 
     &__form-container {
       order: 3;
+      flex-basis: 100%;
     }
   }
-
+  
   .menu-toggle {
-    display: block;
+    display: flex;
+    height: 60px;
+    flex-basis: 60px;
+    align-self: center;
   }
-
+ 
   .nav-bar {
     display: none;
 
