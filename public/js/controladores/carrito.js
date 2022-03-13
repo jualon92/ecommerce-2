@@ -20,10 +20,10 @@ class CarritoController extends CarritoModel {
     }
 
     getTotalCarrito() {
-        try {
+       
             let arrItems = JSON.parse(localStorage.getItem('carrito'))
             let acu = 0
-            if (arrItems.length) {
+            if (arrItems) {
                 for (let i = 0; i < arrItems.length; i++)
                     // console.log(arrItems[i].cantidad)
                     acu = acu + parseInt(arrItems[i].cantidad)
@@ -32,10 +32,7 @@ class CarritoController extends CarritoModel {
             } else { //rever, no necesario
                 return 0
             }
-        } catch (error) {
-            console.warn(error)
-            return 0
-        }
+       
         /*
          let acu = 0
          if (arrItems.length) {

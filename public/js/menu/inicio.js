@@ -136,8 +136,8 @@ async function initInicio() {
 
     var productos = await productoController.obtenerProductos()
     await renderPlantillaListado(productos)
-
-    document.querySelector('.section-cards__header p').innerHTML = `Se encontraron ${productos.length} productos`
+    if(productos)  document.querySelector('.section-cards__header p').innerHTML = `Se encontraron ${productos.length} productos`   ;
+    
     document.querySelector(".fa-layers-counter").innerText = carritoController.getTotalCarrito()
     document.querySelector(".fa-layers-counter").style.display = "inline-block"
     const botonBusqueda = document.querySelector(".search-bar__form-submit")
