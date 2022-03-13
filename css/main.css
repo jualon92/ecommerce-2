@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap");
-@import url(c:\Users\rober\Documents\pfinal_JuanIgnacio-Londra\ecommerce-2-2\public\sass\vendors\fontello-dabf156c\css\fontello.css);
 *,
 *::after,
 *::before {
@@ -19,14 +18,18 @@ body {
   font-family: "Rajdhani", sans-serif;
 }
 
+/*
 @font-face {
-  font-family: 'fontello';
-  src: url("../font/fontello.eot?27605705");
-  src: url("../font/fontello.eot?27605705#iefix") format("embedded-opentype"), url("../font/fontello.woff2?27605705") format("woff2"), url("../font/fontello.woff?27605705") format("woff"), url("../font/fontello.ttf?27605705") format("truetype"), url("../font/fontello.svg?27605705#fontello") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?27605705');
+    src: url('../font/fontello.eot?27605705#iefix') format('embedded-opentype'),
+         url('../font/fontello.woff2?27605705') format('woff2'),
+         url('../font/fontello.woff?27605705') format('woff'),
+         url('../font/fontello.ttf?27605705') format('truetype'),
+         url('../font/fontello.svg?27605705#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }*/
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
@@ -899,8 +902,8 @@ body {
   display: block;
 }
 
-#menu:checked ~ .search-bar .menu-toggle__label {
-  background-color: yellow;
+#menu:hover ~ .search-bar .menu-toggle__label {
+  color: white;
 }
 
 .main-header, .header-nos {
@@ -951,36 +954,36 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0.5em;
+  /*
+  &__logo-container {
+    //  background-color: $searchbar-primary;
+    padding: em(5);
+  }*/
 }
 
 .search-bar__icon-search {
   font-size: 20px;
 }
 
-.search-bar__logo-container, .search-bar__form-container {
-  padding: 0.65em;
-}
-
-.search-bar__logo-img {
-  width: 60px;
-}
-
-.search-bar__logo-container {
-  padding: 0.3125rem;
+.search-bar__form-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .search-bar__form-container {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 58px;
 }
 
 .search-bar__form-label {
@@ -1000,7 +1003,7 @@ body {
 .search-bar__form-submit {
   background-color: #febd67;
   margin-left: -40px;
-  width: 42px;
+  width: 48px;
   border-radius: 3px;
   z-index: 12;
   border-style: solid;
@@ -1015,12 +1018,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 5em;
-          flex: 0 0 5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /*  display: flex;
+    flex: 0 0 5em;
+    //    background-color: $searchbar-primary;
+    align-items: center; // eje y centrado */
 }
 
 .search-bar__carrito-img {
@@ -1037,12 +1041,23 @@ body {
   display: flex;
 }
 
+.fa-layers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .fa-layers-counter {
-  border-radius: 3px;
+  /*border-radius: 3px;
   padding: 2px;
   top: -10px;
   left: -5px;
   position: relative;
+  */
+  border-radius: 3px;
+  padding: 2px;
+  height: 25px;
+  width: 15px;
 }
 
 .search-bar__form-search {
@@ -1084,7 +1099,6 @@ body {
   *********************************/
 .menu-toggle {
   display: none;
-  background-color: red;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 3em;
           flex: 0 0 3em;
@@ -1094,13 +1108,8 @@ body {
 
 .menu-toggle__label {
   display: block;
-  background-color: black;
   width: 100%;
   height: 100%;
-}
-
-.menu-toggle__label:hover {
-  background-color: #8a8061;
 }
 
 .menu-toggle__pan-arriba, .menu-toggle__medallon, .menu-toggle__pan-abajo {
@@ -1143,25 +1152,40 @@ body {
             transform: translateY(-10px) !important;
   }
   .search-bar {
+    row-gap: 15px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 30px;
+  }
+  .search-bar__carrito-container {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
   .search-bar__logo-container {
-    margin-right: auto;
-  }
-  .search-bar__form-submit {
-    margin-left: -6px;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
   .search-bar__form-container {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
   .menu-toggle {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 60px;
+    -ms-flex-preferred-size: 60px;
+        flex-basis: 60px;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   .nav-bar {
     display: none;
@@ -1172,10 +1196,6 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-}
-
-.tiptext {
-  /*rever, seria mejor delegarlo a js*/
 }
 
 .section-cards__header {
@@ -1225,6 +1245,7 @@ body {
   background-color: white;
   border-width: 1.5px;
   padding: 2.5px 5px 2.5px;
+  top: 120px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1243,8 +1264,6 @@ body {
   .search-bar__carrito-container:hover + .tiptext {
     /*rever, seria mejor delegarlo a js*/
     display: block !important;
-    left: 80% !important;
-    top: 50px !important;
   }
 }
 
@@ -1534,9 +1553,12 @@ input:focus::placeholder {
   }
 }
 
-@media (min-width: 765px) and (max-width: 2400px) {
+@media (min-width: 799px) and (max-width: 2400px) {
   .footer-bottom {
     margin-top: 0;
+  }
+  .menu-toggle {
+    display: none;
   }
   .footer-box__ayuda {
     width: 203px;
@@ -1564,8 +1586,8 @@ input:focus::placeholder {
             transform: translateY(-5px);
   }
   .footer-box {
-    margin-right: 6%;
-    margin-left: 6%;
+    margin-right: 4%;
+    margin-left: 4%;
   }
   .footer-box__titulo {
     font-size: 1.3rem;
@@ -1945,8 +1967,8 @@ table, th, td {
 }
 
 .txt-mid {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/productos/pclogo.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/productos/pclogo.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/iconos/pclogo.avif");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/iconos/pclogo.avif");
   color: black;
   background-size: cover;
   -ms-flex-item-align: normal;
