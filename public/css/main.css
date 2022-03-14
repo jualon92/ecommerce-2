@@ -516,20 +516,20 @@ body {
     min-width: 240px !important;
   }
   .card__precio {
-    margin-right: 15px;
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
+  }
+}
+
+@media (min-width: 322px) {
+  .card__precio {
+    margin-right: 25px;
   }
 }
 
 @media (max-width: 425px) {
   .card {
     min-width: 280px;
-  }
-  .card__precio {
-    margin-right: 25px;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
   }
 }
 
@@ -1277,7 +1277,6 @@ body {
 
 .card__envio {
   margin-top: -30px;
-  margin-left: -6px;
 }
 
 .footer-top {
