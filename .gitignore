@@ -3,3 +3,5 @@ node_modules/
 
 # Ignorar archivos de api keys
 .env
+development.env
+production.env
