@@ -9,7 +9,6 @@ import compression from "compression"
 //ProductoModelMongoDB.conectarDB()
 
 
-
 Mongo_DB.conectarDB() 
 
 const app = express()
