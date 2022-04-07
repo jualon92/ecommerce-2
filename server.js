@@ -11,6 +11,7 @@ import compression from "compression"
 
 Mongo_DB.conectarDB() 
 
+
 const app = express()
 app.use(compression());
 app.use(express.static('public'))
@@ -23,9 +24,6 @@ app.use('/upload', routerUpload)
 
  
  
-
-//console.log(process.env.PUBLIC)
-//// 
 console.log("process.env.PORT", process.env.PORT)
 console.log("process.env.TIPO", process.env.TIPO)
 console.log("process.env.CNX", process.env.CNX)
